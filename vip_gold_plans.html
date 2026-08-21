@@ -216,26 +216,30 @@
             <form id="purchaseForm" class="space-y-3.5">
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">الاسم بالكامل</label>
-                    <input type="text" required placeholder="أدخل اسمك الكريم" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none min-h-[42px]">
+                    <input type="text" id="buyerName" required placeholder="أدخل اسمك الكريم" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none min-h-[42px]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">رقم الموبايل للتواصل</label>
-                    <input type="tel" required placeholder="01x xxx xxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none text-right min-h-[42px]">
+                    <input type="tel" id="buyerPhone" required placeholder="01x xxx xxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none text-right min-h-[42px]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">نوع الطلب</label>
-                    <select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none min-h-[42px]">
+                    <select id="buyerOrderType" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none min-h-[42px]">
                         <option>خط جديد مع تفعيل الخصم 50%</option>
                         <option>تحويل خطي الحالي لباقات Gold</option>
                         <option>تحويل رقمي من شبكة أخرى (MNP Port In)</option>
                     </select>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-amber-300 mb-1">كود التفعيل (اختياري)</label>
-                    <input type="text" placeholder="أدخل كود الخصم الخاص بك" class="w-full px-3.5 py-2 rounded-xl bg-slate-800 border border-amber-500/40 text-amber-300 font-mono text-xs sm:text-sm outline-none dir-ltr text-center min-h-[40px]">
+                <!-- InstaPay Payment Notice -->
+                <div class="bg-gradient-to-r from-amber-500/15 via-purple-900/30 to-amber-500/15 border border-amber-500/40 p-3 rounded-2xl text-center space-y-1">
+                    <span class="block text-xs font-black text-amber-300 flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-money-bill-transfer text-amber-400"></i>
+                        <span>طريقة السداد: إرسال مبلغ الاشتراك للخصم عبر إنستا باي (InstaPay)</span>
+                    </span>
+                    <span class="block text-[11px] text-gray-300 font-medium">سيتم توجيهك مباشرة للمحادثة لإرسال سكرين شوت الدفع</span>
                 </div>
 
                 <!-- Price summary in modal -->
@@ -254,8 +258,9 @@
                     </div>
                 </div>
 
-                <button type="submit" class="w-full btn-gold font-black py-3 rounded-xl shadow-lg text-xs sm:text-sm min-h-[46px]">
-                    تأكيد الطلب وتفعيل الخصم
+                <button type="submit" class="w-full btn-gold font-black py-3 rounded-xl shadow-lg text-xs sm:text-sm min-h-[46px] flex items-center justify-center gap-2">
+                    <span>تأكيد الطلب وتفعيل الخصم</span>
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
                 </button>
             </form>
         </div>
@@ -386,6 +391,10 @@
                                     <div class="flex items-start gap-2.5">
                                         <span class="bg-amber-500 text-slate-950 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shrink-0 font-black text-[11px] sm:text-xs mt-0.5 shadow">3</span>
                                         <p>يتم تسجيل الباقة برقم يبدأ بـ <strong class="text-amber-300 font-extrabold dir-ltr inline-block">015</strong> إذا كان متاحاً. وإذا لم يكن متاحاً، يمكنك شراء خط جديد لتسجيل الباقة عليه، ويكون هذا الرقم هو <strong class="text-amber-400 font-extrabold">المسؤول عن إدارة الباقة وتوزيع الميزات بين أفراد العائلة</strong>.</p>
+                                    </div>
+                                    <div class="mr-7 bg-amber-500/15 border border-amber-400/40 rounded-xl p-2.5 text-amber-300 font-extrabold text-xs flex items-center gap-2">
+                                        <i class="fa-solid fa-clock text-amber-400 text-sm"></i>
+                                        <span>معلومة هامة: الخط الجديد بيحتاج 24 ساعة للتفعيل</span>
                                     </div>
                                 </div>
 
@@ -1016,8 +1025,33 @@
             // Submit Form
             $('#purchaseForm').submit(function (e) {
                 e.preventDefault();
+                
+                const name = $('#buyerName').val().trim();
+                const phone = $('#buyerPhone').val().trim();
+                const orderType = $('#buyerOrderType').val();
+                const planTitle = $('#modalPlanTitle').text();
+                const planPrice = $('#modalPlanPrice').text();
+                const taxPrice = $('#modalTaxPrice').text();
+
+                const msgText = `مرحباً، أود تأكيد طلب الاشتراك في باقات VIP Gold:\n\n` +
+                    `👤 الاسم: ${name}\n` +
+                    `📱 رقم الموبايل: ${phone}\n` +
+                    `📋 نوع الطلب: ${orderType}\n` +
+                    `⭐ الباقة المختارة: ${planTitle}\n` +
+                    `💰 السعر الأساسي: ${planPrice}\n` +
+                    `💳 الإجمالي مع الضريبة: ${taxPrice}\n\n` +
+                    `📌 ملاحظة: سوف أرسل لك سكرين شوت من عملية الدفع عبر إنستا باي (InstaPay).`;
+
+                const whatsappNumber = '201500023516';
+                const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(msgText)}`;
+
                 $('#buyModal').addClass('hidden').removeClass('flex');
-                showToast("تم تسجيل طلبك بنجاح! سيتم التواصل معك لإكمال التفعيل والخصم.");
+                showToast("جاري توجيهك للواتساب لإرسال البيانات وسكرين شوت التحويل...");
+                
+                setTimeout(function() {
+                    window.open(waUrl, '_blank');
+                }, 600);
+
                 this.reset();
             });
 
