@@ -148,808 +148,8 @@
         </div>
     </div>
 
-    <!-- Main Content Container (Hidden until authentication) -->
-    <div id="appContent" class="hidden flex-col justify-between w-full flex-grow">
-
-    <!-- Header Hero Banner (ديف فخم وبداية مخصصة) -->
-    <header class="max-w-5xl mx-auto w-full mb-10">
-        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-950/90 via-slate-900/95 to-amber-950/80 border border-amber-500/30 p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
-            <!-- Decorative Glow & Badges -->
-            <div class="absolute -top-20 -right-20 w-60 h-60 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
-
-            <!-- Top Bar with User Info & Logout -->
-            <div class="flex items-center justify-between mb-4 bg-slate-900/60 border border-amber-500/20 p-2.5 px-4 rounded-2xl text-xs">
-                <div class="flex items-center gap-2 font-bold text-amber-300">
-                    <i class="fa-solid fa-user-circle text-base text-amber-400"></i>
-                    <span>مرحباً بك: <strong class="text-white" id="currentUserName">ahmed</strong></span>
-                </div>
-                <button id="logoutBtn" class="bg-red-500/20 hover:bg-red-500 text-red-300 hover:text-white border border-red-500/40 px-3 py-1 rounded-xl transition flex items-center gap-1.5 font-bold">
-                    <span>تسجيل الخروج</span>
-                    <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i>
-                </button>
-            </div>
-
-            <div class="relative z-10 text-center space-y-5">
-                <!-- Islamic Greeting -->
-                <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-5 py-2 rounded-full text-amber-300 font-bold text-base sm:text-lg shadow-inner">
-                    <i class="fa-solid fa-kaaba text-amber-400"></i>
-                    <span>السلام عليكم ورحمة الله وبركاته</span>
-                </div>
-
-                <!-- Title -->
-                <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
-                    عروض الباقات الفاخرة <span class="gold-text-gradient">VIP Gold</span>
-                </h1>
-
-                <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
-                    استمتع بأقوى ميزات الاتصالات والإنترنت العائلي مع خصم 50% مدى الحياة مسجّل بالسيستم رسمياً.
-                </p>
-
-                <!-- Luxurious Discount Box -->
-                <div class="mt-6 bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-500/20 border-2 border-amber-400/50 rounded-2xl p-5 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 bg-amber-500 text-slate-950 font-black text-[11px] px-4 py-1 rounded-br-xl shadow-md">
-                        عرض استثنائي حصري 🔥
-                    </div>
-
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-2">
-                        <div class="space-y-2 text-center md:text-right">
-                            <div class="flex items-center justify-center md:justify-start gap-2 text-amber-300 font-extrabold text-lg sm:text-xl">
-                                <i class="fa-solid fa-gem text-amber-400"></i>
-                                <span>خصم 50% مدى الحياة على الفاتورة الشهرية</span>
-                            </div>
-                            <p class="text-xs sm:text-sm text-gray-300 font-semibold leading-relaxed">
-                                • رسوم تفعيل الخصم: <strong class="text-amber-400 font-black text-base">2,500 جنيه مصري فقط</strong> (تُدفع مرة واحدة فقط وقبل تفعيل الخصم).
-                            </p>
-                            <p class="text-xs sm:text-sm text-emerald-400 font-bold flex items-center justify-center md:justify-start gap-1.5 pt-1">
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>يبدأ احتساب الخصم من أول فاتورة بعد التفعيل ومسجّل على النظام حتى عام 2100</span>
-                            </p>
-                        </div>
-
-                        <!-- Badge summary -->
-                        <div class="shrink-0 bg-slate-950/80 border border-amber-400/40 rounded-2xl p-4 text-center min-w-[170px]">
-                            <span class="block text-xs font-bold text-gray-400">رسوم التفعيل (مرة واحدة)</span>
-                            <span class="block text-3xl font-black text-amber-400 my-1">2,500 <span class="text-xs text-gray-300">ج.م</span></span>
-                            <span class="block text-[11px] font-extrabold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/30">خصم 50% حتى 2100</span>
-                        </div>
-                    </div>
-
-                    <!-- Tax note banner -->
-                    <div class="mt-4 pt-3 border-t border-amber-500/30 text-xs text-amber-200/90 font-medium leading-normal flex items-start gap-2 bg-amber-950/30 p-2.5 rounded-xl">
-                        <i class="fa-solid fa-circle-info text-amber-400 text-sm shrink-0 mt-0.5"></i>
-                        <span>توضيح هام: يُطبق خصم الـ 50% على سعر الباقة الأساسية. الضريبة الحكومية المفروضة تُحسب بالكامل طبقاً للوائح والقوانين (موضحة بدقة بالأسفل داخل كل باقة).</span>
-                    </div>
-                </div>
-
-                <!-- Subscription Steps & Branch Guide Box -->
-                <div class="mt-5 bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative backdrop-blur-md">
-                    <div class="flex items-center gap-2 text-amber-400 font-black text-sm sm:text-base mb-4 border-b border-amber-500/20 pb-3">
-                        <i class="fa-solid fa-store text-amber-400 text-lg"></i>
-                        <span>خطوات الاستفادة من الخصم والتسجيل بالفرع:</span>
-                    </div>
-
-                    <div class="space-y-3 text-xs sm:text-sm text-gray-200 font-semibold leading-relaxed">
-                        <div class="flex items-start gap-3">
-                            <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">1</span>
-                            <p>اختر الباقة المناسبة لك ولعائلتك من قائمة الباقات بالأسفل.</p>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">2</span>
-                            <p>توجه إلى الفرع وأبلغ الموظف المختص بأنك تريد التحويل إلى <strong class="text-amber-300 font-bold">(اسم الباقة التي اخترتها)</strong>.</p>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">3</span>
-                            <p>يتم تسجيل الباقة برقم يبدأ بـ <strong class="text-amber-300 font-extrabold dir-ltr inline-block">015</strong> إذا كان متاحاً. وإذا لم يكن متاحاً، يمكنك شراء خط جديد لتسجيل الباقة عليه، ويكون هذا الرقم هو <strong class="text-amber-400 font-extrabold">المسؤول عن إدارة الباقة وتوزيع الميزات بين أفراد العائلة</strong>.</p>
-                        </div>
-                    </div>
-
-                    <!-- Advice & Tip Box -->
-                    <div class="mt-4 bg-gradient-to-r from-amber-500/15 via-purple-900/30 to-amber-500/10 border border-amber-400/40 rounded-xl p-3.5 text-xs sm:text-sm text-amber-200 font-medium flex items-start gap-3 shadow-inner">
-                        <i class="fa-solid fa-lightbulb text-amber-400 text-lg shrink-0 mt-0.5"></i>
-                        <div>
-                            <strong class="text-amber-300 font-extrabold block mb-1">نصيحة مميزة عند التحويل:</strong>
-                            <p class="text-gray-300 leading-normal">من الأفضل شراء جميع الأرقام التي تحتاجها فوراً عند التحويل، لتتمكن من اختيار أرقام مميزة تناسب احتياجك بالنسبة لأرقام 015.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Filter Bar -->
-                <div class="pt-4 flex flex-wrap justify-center items-center gap-3">
-                    <button class="filter-btn active px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 transition" data-filter="all">
-                        جميع الباقات (5)
-                    </button>
-                    <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition" data-filter="popular">
-                        الأكثر طلباً 🔥
-                    </button>
-                    <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition" data-filter="high">
-                        الباقات العالية والممتازة 🚀
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Plans Cards Container -->
-    <main class="max-w-7xl mx-auto w-full flex-grow">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5" id="plansGrid">
-
-            <!-- Card 1: 600 EGP -->
-            <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="600" data-category="popular">
-                <div>
-                    <!-- Package Clear Title Banner -->
-                    <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                        <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                        <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 600</h3>
-                    </div>
-
-                    <!-- Badge & Price Header -->
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-amber-400 tracking-tight">300</span>
-                                <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
-                            </div>
-                            <div class="text-[11px] font-bold text-gray-400 line-through">
-                                بدلاً من 600 ج.م
-                            </div>
-                        </div>
-                        <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-                            <i class="fa-solid fa-gem text-[10px]"></i>
-                            <span>WE GOLD</span>
-                        </div>
-                    </div>
-
-                    <!-- Exact Price including Tax -->
-                    <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
-                        <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
-                        <span class="block text-base font-black text-emerald-400">452.41 ج.م / شهرياً</span>
-                    </div>
-
-                    <!-- Compare Checkbox -->
-                    <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
-                        <label for="comp-600" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
-                        <input type="checkbox" id="comp-600" data-plan="600" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
-                    </div>
-
-                    <!-- Action Button -->
-                    <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 600" data-plan-price="300" data-tax-price="452.41">
-                        <span>طلب الاشتراك</span>
-                        <i class="fa-solid fa-cart-shopping text-xs"></i>
-                    </button>
-
-                    <!-- Feature Highlight: 10,000 Family Mins -->
-                    <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
-                        <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs">
-                            <i class="fa-solid fa-people-group text-amber-400"></i>
-                            <span>10,000 دقيقة بين أفراد العائلة</span>
-                        </div>
-                        <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
-                    </div>
-
-                    <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">20 جيجا موبايل إنترنت</span>
-                            <i class="fa-solid fa-mobile-screen-button text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">3,700 دقيقة أو رسالة</span>
-                            <i class="fa-regular fa-clock text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">2 خطوط عيلة</span>
-                            <i class="fa-solid fa-users text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">150 جيجا إنترنت أرضى أو WE Air 150</span>
-                            <i class="fa-solid fa-wifi text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">25 دقيقة دولية</span>
-                            <i class="fa-solid fa-globe text-amber-400"></i>
-                        </div>
-
-                        <!-- Extra Details -->
-                        <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">1.5 جيجا تجوال أسبوعية (مرتين بالسنة)</span>
-                                <i class="fa-solid fa-plane text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span>
-                                <i class="fa-solid fa-gift text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">1000 جنيه قسيمة شراء سنوية</span>
-                                <i class="fa-solid fa-ticket text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط موبايل يصل إلى 10,000 جنيه</span>
-                                <i class="fa-solid fa-credit-card text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك TOD Mobile هدية</span>
-                                <i class="fa-solid fa-tv text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span>
-                                <i class="fa-solid fa-user-doctor text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">20 دقيقة 140 الدليل</span>
-                                <i class="fa-regular fa-clock text-amber-400"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Partner Logos -->
-                    <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                        <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                        <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center">
-                            <span class="text-[9px] text-gray-400">by Vezeeta</span>
-                            <span>Shamel</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Expand Arrow -->
-                <div class="text-center mt-3">
-                    <button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 2: 890 EGP -->
-            <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between border-2 border-amber-500/40" data-price="890" data-category="popular">
-                <div class="absolute -top-3 right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-lg">
-                    الأكثر طلباً 🔥
-                </div>
-
-                <div>
-                    <!-- Package Clear Title Banner -->
-                    <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3 pt-2">
-                        <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                        <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 890</h3>
-                    </div>
-
-                    <!-- Badge & Price Header -->
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-amber-400 tracking-tight">445</span>
-                                <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
-                            </div>
-                            <div class="text-[11px] font-bold text-gray-400 line-through">
-                                بدلاً من 890 ج.م
-                            </div>
-                        </div>
-                        <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-                            <i class="fa-solid fa-gem text-[10px]"></i>
-                            <span>WE GOLD</span>
-                        </div>
-                    </div>
-
-                    <!-- Exact Price including Tax -->
-                    <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
-                        <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
-                        <span class="block text-base font-black text-emerald-400">664.72 ج.م / شهرياً</span>
-                    </div>
-
-                    <!-- Compare Checkbox -->
-                    <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
-                        <label for="comp-890" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
-                        <input type="checkbox" id="comp-890" data-plan="890" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
-                    </div>
-
-                    <!-- Action Button -->
-                    <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 890" data-plan-price="445" data-tax-price="664.72">
-                        <span>طلب الاشتراك</span>
-                        <i class="fa-solid fa-cart-shopping text-xs"></i>
-                    </button>
-
-                    <!-- Feature Highlight: 10,000 Family Mins -->
-                    <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
-                        <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs">
-                            <i class="fa-solid fa-people-group text-amber-400"></i>
-                            <span>10,000 دقيقة بين أفراد العائلة</span>
-                        </div>
-                        <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
-                    </div>
-
-                    <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">30 جيجا موبايل إنترنت</span>
-                            <i class="fa-solid fa-mobile-screen-button text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">6,000 دقيقة أو رسالة</span>
-                            <i class="fa-regular fa-clock text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">3 خطوط عيلة</span>
-                            <i class="fa-solid fa-users text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">250 جيجا إنترنت أرضى أو WE Air 150</span>
-                            <i class="fa-solid fa-wifi text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">35 دقيقة دولية</span>
-                            <i class="fa-solid fa-globe text-amber-400"></i>
-                        </div>
-
-                        <!-- Extra Details -->
-                        <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">1.5 جيجا تجوال أسبوعية (مرتين بالسنة)</span>
-                                <i class="fa-solid fa-plane text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span>
-                                <i class="fa-solid fa-gift text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">1500 جنيه قسيمة شراء سنوية</span>
-                                <i class="fa-solid fa-ticket text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط iPhone 17 يصل إلي 30,000 جنيه</span>
-                                <i class="fa-solid fa-mobile-retro text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 15,000 جنيه</span>
-                                <i class="fa-solid fa-credit-card text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك TOD Mobile هدية</span>
-                                <i class="fa-solid fa-tv text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span>
-                                <i class="fa-solid fa-user-doctor text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">20 دقيقة 140 الدليل</span>
-                                <i class="fa-regular fa-clock text-amber-400"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Partner Logos -->
-                    <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                        <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                        <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center">
-                            <span class="text-[9px] text-gray-400">by Vezeeta</span>
-                            <span>Shamel</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Expand Arrow -->
-                <div class="text-center mt-3">
-                    <button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 3: 1200 EGP -->
-            <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="1200" data-category="high">
-                <div>
-                    <!-- Package Clear Title Banner -->
-                    <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                        <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                        <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 1200</h3>
-                    </div>
-
-                    <!-- Badge & Price Header -->
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-amber-400 tracking-tight">600</span>
-                                <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
-                            </div>
-                            <div class="text-[11px] font-bold text-gray-400 line-through">
-                                بدلاً من 1200 ج.م
-                            </div>
-                        </div>
-                        <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-                            <i class="fa-solid fa-gem text-[10px]"></i>
-                            <span>WE GOLD</span>
-                        </div>
-                    </div>
-
-                    <!-- Exact Price including Tax -->
-                    <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
-                        <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
-                        <span class="block text-base font-black text-emerald-400">891.67 ج.م / شهرياً</span>
-                    </div>
-
-                    <!-- Compare Checkbox -->
-                    <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
-                        <label for="comp-1200" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
-                        <input type="checkbox" id="comp-1200" data-plan="1200" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
-                    </div>
-
-                    <!-- Action Button -->
-                    <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 1200" data-plan-price="600" data-tax-price="891.67">
-                        <span>طلب الاشتراك</span>
-                        <i class="fa-solid fa-cart-shopping text-xs"></i>
-                    </button>
-
-                    <!-- Feature Highlight: 10,000 Family Mins -->
-                    <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
-                        <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs">
-                            <i class="fa-solid fa-people-group text-amber-400"></i>
-                            <span>10,000 دقيقة بين أفراد العائلة</span>
-                        </div>
-                        <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
-                    </div>
-
-                    <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">65 جيجا موبايل إنترنت</span>
-                            <i class="fa-solid fa-mobile-screen-button text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">8,000 دقيقة أو رسالة</span>
-                            <i class="fa-regular fa-clock text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">4 خطوط عيلة</span>
-                            <i class="fa-solid fa-users text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">250 جيجا إنترنت أرضى أو WE Air 250</span>
-                            <i class="fa-solid fa-wifi text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">WE Ardy 20</span>
-                            <i class="fa-solid fa-phone text-amber-400"></i>
-                        </div>
-
-                        <!-- Extra Details -->
-                        <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">45 دقيقة دولية</span>
-                                <i class="fa-solid fa-globe text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">2 جيجا تجوال أسبوعية (مرتين بالسنة)</span>
-                                <i class="fa-solid fa-plane text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span>
-                                <i class="fa-solid fa-gift text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">2000 جنيه قسيمة شراء سنوية</span>
-                                <i class="fa-solid fa-ticket text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط iPhone 17 يصل إلي 40,000 جنيه</span>
-                                <i class="fa-solid fa-mobile-retro text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 25,000 جنيه</span>
-                                <i class="fa-solid fa-credit-card text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك TOD HD هدية كل شهر</span>
-                                <i class="fa-solid fa-tv text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span>
-                                <i class="fa-solid fa-user-doctor text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">60 دقيقة 140 الدليل</span>
-                                <i class="fa-regular fa-clock text-amber-400"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Partner Logos -->
-                    <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                        <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                        <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center">
-                            <span class="text-[9px] text-gray-400">by Vezeeta</span>
-                            <span>Shamel</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Expand Arrow -->
-                <div class="text-center mt-3">
-                    <button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 4: 1500 EGP -->
-            <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="1500" data-category="high">
-                <div>
-                    <!-- Package Clear Title Banner -->
-                    <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                        <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                        <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 1500</h3>
-                    </div>
-
-                    <!-- Badge & Price Header -->
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-amber-400 tracking-tight">750</span>
-                                <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
-                            </div>
-                            <div class="text-[11px] font-bold text-gray-400 line-through">
-                                بدلاً من 1500 ج.م
-                            </div>
-                        </div>
-                        <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-                            <i class="fa-solid fa-gem text-[10px]"></i>
-                            <span>WE GOLD</span>
-                        </div>
-                    </div>
-
-                    <!-- Exact Price including Tax -->
-                    <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
-                        <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
-                        <span class="block text-base font-black text-emerald-400">1,111.30 ج.م / شهرياً</span>
-                    </div>
-
-                    <!-- Compare Checkbox -->
-                    <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
-                        <label for="comp-1500" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
-                        <input type="checkbox" id="comp-1500" data-plan="1500" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
-                    </div>
-
-                    <!-- Action Button -->
-                    <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 1500" data-plan-price="750" data-tax-price="1111.30">
-                        <span>طلب الاشتراك</span>
-                        <i class="fa-solid fa-cart-shopping text-xs"></i>
-                    </button>
-
-                    <!-- Feature Highlight: 10,000 Family Mins -->
-                    <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
-                        <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs">
-                            <i class="fa-solid fa-people-group text-amber-400"></i>
-                            <span>10,000 دقيقة بين أفراد العائلة</span>
-                        </div>
-                        <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
-                    </div>
-
-                    <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">70 جيجا موبايل إنترنت</span>
-                            <i class="fa-solid fa-mobile-screen-button text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">9,000 دقيقة أو رسالة</span>
-                            <i class="fa-regular fa-clock text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">5 خطوط عيلة</span>
-                            <i class="fa-solid fa-users text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">400 جيجا إنترنت أرضى أو WE Air 250</span>
-                            <i class="fa-solid fa-wifi text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">WE Ardy 20</span>
-                            <i class="fa-solid fa-phone text-amber-400"></i>
-                        </div>
-
-                        <!-- Extra Details -->
-                        <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">60 دقيقة دولية</span>
-                                <i class="fa-solid fa-globe text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">4 جيجا تجوال أسبوعية (مرتين بالسنة)</span>
-                                <i class="fa-solid fa-plane text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">4 دقيقة إرسال WE Flight</span>
-                                <i class="fa-solid fa-plane-departure text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">2 نقطة مقابل كل جنيه بالفاتورة</span>
-                                <i class="fa-solid fa-gift text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">3000 جنيه قسيمة شراء سنوية</span>
-                                <i class="fa-solid fa-ticket text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط iPhone 17 يصل إلي 60,000 جنيه</span>
-                                <i class="fa-solid fa-mobile-retro text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 25,000 جنيه</span>
-                                <i class="fa-solid fa-credit-card text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك TOD HD هدية كل شهر</span>
-                                <i class="fa-solid fa-tv text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span>
-                                <i class="fa-solid fa-user-doctor text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">60 دقيقة 140 الدليل</span>
-                                <i class="fa-regular fa-clock text-amber-400"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Partner Logos -->
-                    <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                        <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                        <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center">
-                            <span class="text-[9px] text-gray-400">by Vezeeta</span>
-                            <span>Shamel</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Expand Arrow -->
-                <div class="text-center mt-3">
-                    <button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 5: 2300 EGP -->
-            <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between border border-amber-500/50" data-price="2300" data-category="high">
-                <div>
-                    <!-- Package Clear Title Banner -->
-                    <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                        <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                        <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 2300</h3>
-                    </div>
-
-                    <!-- Badge & Price Header -->
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-black text-amber-400 tracking-tight">1150</span>
-                                <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
-                            </div>
-                            <div class="text-[11px] font-bold text-gray-400 line-through">
-                                بدلاً من 2300 ج.م
-                            </div>
-                        </div>
-                        <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-                            <i class="fa-solid fa-crown text-[10px]"></i>
-                            <span>WE GOLD</span>
-                        </div>
-                    </div>
-
-                    <!-- Exact Price including Tax -->
-                    <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
-                        <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
-                        <span class="block text-base font-black text-emerald-400">1,696.98 ج.م / شهرياً</span>
-                    </div>
-
-                    <!-- Compare Checkbox -->
-                    <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
-                        <label for="comp-2300" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
-                        <input type="checkbox" id="comp-2300" data-plan="2300" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
-                    </div>
-
-                    <!-- Action Button -->
-                    <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 2300" data-plan-price="1150" data-tax-price="1696.98">
-                        <span>طلب الاشتراك</span>
-                        <i class="fa-solid fa-cart-shopping text-xs"></i>
-                    </button>
-
-                    <!-- Feature Highlight: 10,000 Family Mins -->
-                    <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
-                        <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs">
-                            <i class="fa-solid fa-people-group text-amber-400"></i>
-                            <span>10,000 دقيقة بين أفراد العائلة</span>
-                        </div>
-                        <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
-                    </div>
-
-                    <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">130 جيجا موبايل إنترنت</span>
-                            <i class="fa-solid fa-mobile-screen-button text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">10,000 دقيقة أو رسالة</span>
-                            <i class="fa-regular fa-clock text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">6 خطوط عيلة</span>
-                            <i class="fa-solid fa-users text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">750 جيجا إنترنت أرضى أو WE Air 650</span>
-                            <i class="fa-solid fa-wifi text-amber-400"></i>
-                        </div>
-                        <div class="flex items-center justify-between text-gray-300 font-semibold">
-                            <span class="text-gray-100">WE Ardy 20</span>
-                            <i class="fa-solid fa-phone text-amber-400"></i>
-                        </div>
-
-                        <!-- Extra Details -->
-                        <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">75 دقيقة دولية</span>
-                                <i class="fa-solid fa-globe text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">6 جيجا تجوال أسبوعية (مرتين بالسنة)</span>
-                                <i class="fa-solid fa-plane text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">6 دقيقة إرسال WE Flight</span>
-                                <i class="fa-solid fa-plane-departure text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">2 نقطة مقابل كل جنيه بالفاتورة</span>
-                                <i class="fa-solid fa-gift text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">5000 جنيه قسيمة شراء سنوية</span>
-                                <i class="fa-solid fa-ticket text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط iPhone 17 يصل إلي 80,000 جنيه</span>
-                                <i class="fa-solid fa-mobile-retro text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 25,000 جنيه</span>
-                                <i class="fa-solid fa-credit-card text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك TOD HD هدية كل شهر</span>
-                                <i class="fa-solid fa-tv text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span>
-                                <i class="fa-solid fa-user-doctor text-amber-400"></i>
-                            </div>
-                            <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                <span class="text-gray-100">60 دقيقة 140 الدليل</span>
-                                <i class="fa-regular fa-clock text-amber-400"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Partner Logos -->
-                    <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                        <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                        <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center">
-                            <span class="text-[9px] text-gray-400">by Vezeeta</span>
-                            <span>Shamel</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Expand Arrow -->
-                <div class="text-center mt-3">
-                    <button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    </div> <!-- End #appContent -->
+    <!-- Main Content Container (Empty by default for maximum security against Inspect Element bypass) -->
+    <div id="appContent" class="hidden flex-col justify-between w-full flex-grow"></div>
 
     <!-- Floating Compare Drawer -->
     <div id="compareBar" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900 border border-amber-500/50 text-white px-6 py-3.5 rounded-full shadow-2xl flex items-center gap-4 z-50 hidden transition-all duration-300">
@@ -1057,19 +257,433 @@
         <span id="toastMsg">تم بنجاح</span>
     </div>
 
-    <!-- jQuery Logic -->
+    <!-- Secure Application Scripting -->
     <script>
         $(document).ready(function () {
-            // Check Session Authentication Status
+            // Template for secure rendering of the application content
+            function renderAppHTML() {
+                return `
+                <header class="max-w-5xl mx-auto w-full mb-10">
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-950/90 via-slate-900/95 to-amber-950/80 border border-amber-500/30 p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
+                        <div class="absolute -top-20 -right-20 w-60 h-60 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div class="flex items-center justify-between mb-4 bg-slate-900/60 border border-amber-500/20 p-2.5 px-4 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 font-bold text-amber-300">
+                                <i class="fa-solid fa-user-circle text-base text-amber-400"></i>
+                                <span>مرحباً بك: <strong class="text-white" id="currentUserName">ahmed</strong></span>
+                            </div>
+                            <button id="logoutBtn" class="bg-red-500/20 hover:bg-red-500 text-red-300 hover:text-white border border-red-500/40 px-3 py-1 rounded-xl transition flex items-center gap-1.5 font-bold">
+                                <span>تسجيل الخروج</span>
+                                <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div class="relative z-10 text-center space-y-5">
+                            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-5 py-2 rounded-full text-amber-300 font-bold text-base sm:text-lg shadow-inner">
+                                <i class="fa-solid fa-kaaba text-amber-400"></i>
+                                <span>السلام عليكم ورحمة الله وبركاته</span>
+                            </div>
+
+                            <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+                                عروض الباقات الفاخرة <span class="gold-text-gradient">VIP Gold</span>
+                            </h1>
+
+                            <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
+                                استمتع بأقوى ميزات الاتصالات والإنترنت العائلي مع خصم 50% مدى الحياة مسجّل بالسيستم رسمياً.
+                            </p>
+
+                            <div class="mt-6 bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-500/20 border-2 border-amber-400/50 rounded-2xl p-5 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative overflow-hidden">
+                                <div class="absolute top-0 left-0 bg-amber-500 text-slate-950 font-black text-[11px] px-4 py-1 rounded-br-xl shadow-md">
+                                    عرض استثنائي حصري 🔥
+                                </div>
+
+                                <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-2">
+                                    <div class="space-y-2 text-center md:text-right">
+                                        <div class="flex items-center justify-center md:justify-start gap-2 text-amber-300 font-extrabold text-lg sm:text-xl">
+                                            <i class="fa-solid fa-gem text-amber-400"></i>
+                                            <span>خصم 50% مدى الحياة على الفاتورة الشهرية</span>
+                                        </div>
+                                        <p class="text-xs sm:text-sm text-gray-300 font-semibold leading-relaxed">
+                                            • رسوم تفعيل الخصم: <strong class="text-amber-400 font-black text-base">2,500 جنيه مصري فقط</strong> (تُدفع مرة واحدة فقط وقبل تفعيل الخصم).
+                                        </p>
+                                        <p class="text-xs sm:text-sm text-emerald-400 font-bold flex items-center justify-center md:justify-start gap-1.5 pt-1">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            <span>يبدأ احتساب الخصم من أول فاتورة بعد التفعيل ومسجّل على النظام حتى عام 2100</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="shrink-0 bg-slate-950/80 border border-amber-400/40 rounded-2xl p-4 text-center min-w-[170px]">
+                                        <span class="block text-xs font-bold text-gray-400">رسوم التفعيل (مرة واحدة)</span>
+                                        <span class="block text-3xl font-black text-amber-400 my-1">2,500 <span class="text-xs text-gray-300">ج.م</span></span>
+                                        <span class="block text-[11px] font-extrabold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/30">خصم 50% حتى 2100</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 pt-3 border-t border-amber-500/30 text-xs text-amber-200/90 font-medium leading-normal flex items-start gap-2 bg-amber-950/30 p-2.5 rounded-xl">
+                                    <i class="fa-solid fa-circle-info text-amber-400 text-sm shrink-0 mt-0.5"></i>
+                                    <span>توضيح هام: يُطبق خصم الـ 50% على سعر الباقة الأساسية. الضريبة الحكومية المفروضة تُحسب بالكامل طبقاً للوائح والقوانين (موضحة بدقة بالأسفل داخل كل باقة).</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative backdrop-blur-md">
+                                <div class="flex items-center gap-2 text-amber-400 font-black text-sm sm:text-base mb-4 border-b border-amber-500/20 pb-3">
+                                    <i class="fa-solid fa-store text-amber-400 text-lg"></i>
+                                    <span>خطوات الاستفادة من الخصم والتسجيل بالفرع:</span>
+                                </div>
+
+                                <div class="space-y-3 text-xs sm:text-sm text-gray-200 font-semibold leading-relaxed">
+                                    <div class="flex items-start gap-3">
+                                        <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">1</span>
+                                        <p>اختر الباقة المناسبة لك ولعائلتك من قائمة الباقات بالأسفل.</p>
+                                    </div>
+
+                                    <div class="flex items-start gap-3">
+                                        <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">2</span>
+                                        <p>توجه إلى الفرع وأبلغ الموظف المختص بأنك تريد التحويل إلى <strong class="text-amber-300 font-bold">(اسم الباقة التي اخترتها)</strong>.</p>
+                                    </div>
+
+                                    <div class="flex items-start gap-3">
+                                        <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">3</span>
+                                        <p>يتم تسجيل الباقة برقم يبدأ بـ <strong class="text-amber-300 font-extrabold dir-ltr inline-block">015</strong> إذا كان متاحاً. وإذا لم يكن متاحاً، يمكنك شراء خط جديد لتسجيل الباقة عليه، ويكون هذا الرقم هو <strong class="text-amber-400 font-extrabold">المسؤول عن إدارة الباقة وتوزيع الميزات بين أفراد العائلة</strong>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 bg-gradient-to-r from-amber-500/15 via-purple-900/30 to-amber-500/10 border border-amber-400/40 rounded-xl p-3.5 text-xs sm:text-sm text-amber-200 font-medium flex items-start gap-3 shadow-inner">
+                                    <i class="fa-solid fa-lightbulb text-amber-400 text-lg shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <strong class="text-amber-300 font-extrabold block mb-1">نصيحة مميزة عند التحويل:</strong>
+                                        <p class="text-gray-300 leading-normal">من الأفضل شراء جميع الأرقام التي تحتاجها فوراً عند التحويل، لتتمكن من اختيار أرقام مميزة تناسب احتياجك بالنسبة لأرقام 015.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 flex flex-wrap justify-center items-center gap-3">
+                                <button class="filter-btn active px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 transition" data-filter="all">
+                                    جميع الباقات (5)
+                                </button>
+                                <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition" data-filter="popular">
+                                    الأكثر طلباً 🔥
+                                </button>
+                                <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition" data-filter="high">
+                                    الباقات العالية والممتازة 🚀
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="max-w-7xl mx-auto w-full flex-grow">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5" id="plansGrid">
+                        <!-- Card 1 -->
+                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="600" data-category="popular">
+                            <div>
+                                <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
+                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 600</h3>
+                                </div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <div class="flex items-baseline gap-1">
+                                            <span class="text-3xl font-black text-amber-400 tracking-tight">300</span>
+                                            <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
+                                        </div>
+                                        <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 600 ج.م</div>
+                                    </div>
+                                    <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+                                        <i class="fa-solid fa-gem text-[10px]"></i>
+                                        <span>WE GOLD</span>
+                                    </div>
+                                </div>
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
+                                    <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
+                                    <span class="block text-base font-black text-emerald-400">452.41 ج.م / شهرياً</span>
+                                </div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
+                                    <label for="comp-600" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
+                                    <input type="checkbox" id="comp-600" data-plan="600" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
+                                </div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 600" data-plan-price="300" data-tax-price="452.41">
+                                    <span>طلب الاشتراك</span>
+                                    <i class="fa-solid fa-cart-shopping text-xs"></i>
+                                </button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
+                                    <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs">
+                                        <i class="fa-solid fa-people-group text-amber-400"></i>
+                                        <span>10,000 دقيقة بين أفراد العائلة</span>
+                                    </div>
+                                    <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
+                                </div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
+                                        <span class="text-gray-100">20 جيجا موبايل إنترنت</span>
+                                        <i class="fa-solid fa-mobile-screen-button text-amber-400"></i>
+                                    </div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
+                                        <span class="text-gray-100">3,700 دقيقة أو رسالة</span>
+                                        <i class="fa-regular fa-clock text-amber-400"></i>
+                                    </div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
+                                        <span class="text-gray-100">2 خطوط عيلة</span>
+                                        <i class="fa-solid fa-users text-amber-400"></i>
+                                    </div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
+                                        <span class="text-gray-100">150 جيجا إنترنت أرضى أو WE Air 150</span>
+                                        <i class="fa-solid fa-wifi text-amber-400"></i>
+                                    </div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
+                                        <span class="text-gray-100">25 دقيقة دولية</span>
+                                        <i class="fa-solid fa-globe text-amber-400"></i>
+                                    </div>
+                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1.5 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1000 جنيه قسيمة شراء سنوية</span><i class="fa-solid fa-ticket text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط موبايل يصل إلى 10,000 جنيه</span><i class="fa-solid fa-credit-card text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك TOD Mobile هدية</span><i class="fa-solid fa-tv text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span><i class="fa-solid fa-user-doctor text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">20 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
+                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between border-2 border-amber-500/40" data-price="890" data-category="popular">
+                            <div class="absolute -top-3 right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-lg">الأكثر طلباً 🔥</div>
+                            <div>
+                                <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3 pt-2">
+                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 890</h3>
+                                </div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <div class="flex items-baseline gap-1">
+                                            <span class="text-3xl font-black text-amber-400 tracking-tight">445</span>
+                                            <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
+                                        </div>
+                                        <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 890 ج.م</div>
+                                    </div>
+                                    <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><i class="fa-solid fa-gem text-[10px]"></i><span>WE GOLD</span></div>
+                                </div>
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
+                                    <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
+                                    <span class="block text-base font-black text-emerald-400">664.72 ج.م / شهرياً</span>
+                                </div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
+                                    <label for="comp-890" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
+                                    <input type="checkbox" id="comp-890" data-plan="890" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
+                                </div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 890" data-plan-price="445" data-tax-price="664.72">
+                                    <span>طلب الاشتراك</span>
+                                    <i class="fa-solid fa-cart-shopping text-xs"></i>
+                                </button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
+                                    <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div>
+                                    <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
+                                </div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">30 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">3 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">250 جيجا إنترنت أرضى أو WE Air 150</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">35 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
+                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1.5 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1500 جنيه قسيمة شراء سنوية</span><i class="fa-solid fa-ticket text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط iPhone 17 يصل إلي 30,000 جنيه</span><i class="fa-solid fa-mobile-retro text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 15,000 جنيه</span><i class="fa-solid fa-credit-card text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك TOD Mobile هدية</span><i class="fa-solid fa-tv text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span><i class="fa-solid fa-user-doctor text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">20 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
+                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="1200" data-category="high">
+                            <div>
+                                <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
+                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 1200</h3>
+                                </div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <div class="flex items-baseline gap-1"><span class="text-3xl font-black text-amber-400 tracking-tight">600</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
+                                        <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 1200 ج.م</div>
+                                    </div>
+                                    <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><i class="fa-solid fa-gem text-[10px]"></i><span>WE GOLD</span></div>
+                                </div>
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-base font-black text-emerald-400">891.67 ج.م / شهرياً</span></div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800"><label for="comp-1200" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-1200" data-plan="1200" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 1200" data-plan-price="600" data-tax-price="891.67"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">65 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">8,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">4 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">250 جيجا إنترنت أرضى أو WE Air 250</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">WE Ardy 20</span><i class="fa-solid fa-phone text-amber-400"></i></div>
+                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">45 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">2 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">2000 جنيه قسيمة شراء سنوية</span><i class="fa-solid fa-ticket text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط iPhone 17 يصل إلي 40,000 جنيه</span><i class="fa-solid fa-mobile-retro text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 25,000 جنيه</span><i class="fa-solid fa-credit-card text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك TOD HD هدية كل شهر</span><i class="fa-solid fa-tv text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span><i class="fa-solid fa-user-doctor text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
+                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="1500" data-category="high">
+                            <div>
+                                <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
+                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 1500</h3>
+                                </div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <div class="flex items-baseline gap-1"><span class="text-3xl font-black text-amber-400 tracking-tight">750</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
+                                        <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 1500 ج.م</div>
+                                    </div>
+                                    <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><i class="fa-solid fa-gem text-[10px]"></i><span>WE GOLD</span></div>
+                                </div>
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-base font-black text-emerald-400">1,111.30 ج.م / شهرياً</span></div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800"><label for="comp-1500" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-1500" data-plan="1500" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 1500" data-plan-price="750" data-tax-price="1111.30"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">70 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">9,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">5 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">400 جيجا إنترنت أرضى أو WE Air 250</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">WE Ardy 20</span><i class="fa-solid fa-phone text-amber-400"></i></div>
+                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">4 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">4 دقيقة إرسال WE Flight</span><i class="fa-solid fa-plane-departure text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">2 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">3000 جنيه قسيمة شراء سنوية</span><i class="fa-solid fa-ticket text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط iPhone 17 يصل إلي 60,000 جنيه</span><i class="fa-solid fa-mobile-retro text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 25,000 جنيه</span><i class="fa-solid fa-credit-card text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك TOD HD هدية كل شهر</span><i class="fa-solid fa-tv text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span><i class="fa-solid fa-user-doctor text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
+                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between border border-amber-500/50" data-price="2300" data-category="high">
+                            <div>
+                                <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
+                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 2300</h3>
+                                </div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <div class="flex items-baseline gap-1"><span class="text-3xl font-black text-amber-400 tracking-tight">1150</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
+                                        <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 2300 ج.م</div>
+                                    </div>
+                                    <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><i class="fa-solid fa-crown text-[10px]"></i><span>WE GOLD</span></div>
+                                </div>
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-base font-black text-emerald-400">1,696.98 ج.م / شهرياً</span></div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800"><label for="comp-2300" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-2300" data-plan="2300" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 2300" data-plan-price="1150" data-tax-price="1696.98"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">130 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">10,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">750 جيجا إنترنت أرضى أو WE Air 650</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">WE Ardy 20</span><i class="fa-solid fa-phone text-amber-400"></i></div>
+                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">75 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6 دقيقة إرسال WE Flight</span><i class="fa-solid fa-plane-departure text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">2 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">5000 جنيه قسيمة شراء سنوية</span><i class="fa-solid fa-ticket text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط iPhone 17 يصل إلي 80,000 جنيه</span><i class="fa-solid fa-mobile-retro text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">تقسيط باقي الموبايلات يصل إلى 25,000 جنيه</span><i class="fa-solid fa-credit-card text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك TOD HD هدية كل شهر</span><i class="fa-solid fa-tv text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">اشتراك سنوي في Vezeeta Shamel</span><i class="fa-solid fa-user-doctor text-amber-400"></i></div>
+                                        <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
+                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                        </div>
+                    </div>
+                </main>`;
+            }
+
+            // Check Session Authentication Status securely
             function checkAuth() {
-                if (sessionStorage.getItem('vip_gold_authenticated') === 'true') {
+                const isAuthenticated = sessionStorage.getItem('vip_gold_authenticated') === 'true';
+                if (isAuthenticated) {
+                    if ($('#appContent').is(':empty')) {
+                        $('#appContent').html(renderAppHTML());
+                        bindAppEvents();
+                    }
                     $('#loginOverlay').addClass('hidden');
                     $('#appContent').removeClass('hidden').addClass('flex');
                 } else {
+                    $('#appContent').empty().addClass('hidden').removeClass('flex');
                     $('#loginOverlay').removeClass('hidden');
-                    $('#appContent').addClass('hidden').removeClass('flex');
                 }
             }
+
+            // ANTI-TAMPER / DEVTOOLS BYPASS GUARD:
+            // MutationObserver checks if user attempts to force display #appContent or delete #loginOverlay without auth
+            const securityObserver = new MutationObserver(function() {
+                const isAuthenticated = sessionStorage.getItem('vip_gold_authenticated') === 'true';
+                if (!isAuthenticated) {
+                    if ($('#loginOverlay').length === 0 || $('#loginOverlay').hasClass('hidden')) {
+                        // Tamper detected! Force refresh page to restore security
+                        sessionStorage.removeItem('vip_gold_authenticated');
+                        location.reload();
+                    }
+                    if (!$('#appContent').hasClass('hidden') || !$('#appContent').is(':empty')) {
+                        $('#appContent').empty().addClass('hidden');
+                    }
+                }
+            });
+
+            securityObserver.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
 
             // Run check on initial load
             checkAuth();
@@ -1083,6 +697,11 @@
                 if (username === 'ahmed' && password === 'gold2026##') {
                     sessionStorage.setItem('vip_gold_authenticated', 'true');
                     $('#loginError').addClass('hidden');
+                    
+                    // Inject HTML securely only now
+                    $('#appContent').html(renderAppHTML());
+                    bindAppEvents();
+
                     $('#loginOverlay').fadeOut(300, function () {
                         $('#appContent').removeClass('hidden').addClass('flex');
                     });
@@ -1094,11 +713,88 @@
                 }
             });
 
-            // Logout Button Event
-            $('#logoutBtn').click(function () {
-                sessionStorage.removeItem('vip_gold_authenticated');
-                location.reload();
-            });
+            // Bind app interactive events after dynamic render
+            function bindAppEvents() {
+                // Logout Button Event
+                $('#logoutBtn').off('click').on('click', function () {
+                    sessionStorage.removeItem('vip_gold_authenticated');
+                    $('#appContent').empty().addClass('hidden').removeClass('flex');
+                    $('#loginOverlay').fadeIn();
+                });
+
+                // Toggle Expand/Collapse Card Details
+                $('.toggle-details-btn').off('click').on('click', function () {
+                    const card = $(this).closest('.card-glass');
+                    const extraDetails = card.find('.extra-details');
+                    const icon = $(this).find('i');
+
+                    extraDetails.slideToggle(300, function () {
+                        if (extraDetails.is(':visible')) {
+                            icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                        } else {
+                            icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                        }
+                    });
+                });
+
+                // Filter Tabs
+                $('.filter-btn').off('click').on('click', function () {
+                    $('.filter-btn').removeClass('active bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20').addClass('bg-slate-800/80 text-gray-300 border border-gray-700');
+                    $(this).addClass('active bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20').removeClass('bg-slate-800/80 text-gray-300 border border-gray-700');
+
+                    const filter = $(this).data('filter');
+
+                    if (filter === 'all') {
+                        $('.card-glass').fadeIn();
+                    } else if (filter === 'popular') {
+                        $('.card-glass').each(function () {
+                            if ($(this).data('category') === 'popular') {
+                                $(this).fadeIn();
+                            } else {
+                                $(this).fadeOut();
+                            }
+                        });
+                    } else if (filter === 'high') {
+                        $('.card-glass').each(function () {
+                            if ($(this).data('category') === 'high') {
+                                $(this).fadeIn();
+                            } else {
+                                $(this).fadeOut();
+                            }
+                        });
+                    }
+                });
+
+                // Compare Checkboxes Logic
+                $('.compare-check').off('change').on('change', function () {
+                    const planId = $(this).data('plan');
+
+                    if ($(this).is(':checked')) {
+                        if (selectedComparePlans.length >= 3) {
+                            showToast("يمكنك مقارنة 3 باقات كحد أقصى في وقت واحد");
+                            $(this).prop('checked', false);
+                            return;
+                        }
+                        selectedComparePlans.push(planId);
+                    } else {
+                        selectedComparePlans = selectedComparePlans.filter(id => id !== planId);
+                    }
+
+                    updateCompareBar();
+                });
+
+                // Purchase Modal Logic
+                $('.buy-btn').off('click').on('click', function () {
+                    const planName = $(this).data('plan-name');
+                    const planPrice = $(this).data('plan-price');
+                    const taxPrice = $(this).data('tax-price');
+
+                    $('#modalPlanTitle').text(planName);
+                    $('#modalPlanPrice').text(planPrice + ' ج.م/شهر');
+                    $('#modalTaxPrice').text(taxPrice + ' ج.م/شهر');
+                    $('#buyModal').removeClass('hidden').addClass('flex');
+                });
+            }
 
             const plansData = {
                 "600": {
@@ -1173,68 +869,7 @@
                 }
             };
 
-            // Toggle Expand/Collapse Card Details
-            $('.toggle-details-btn').click(function () {
-                const card = $(this).closest('.card-glass');
-                const extraDetails = card.find('.extra-details');
-                const icon = $(this).find('i');
-
-                extraDetails.slideToggle(300, function () {
-                    if (extraDetails.is(':visible')) {
-                        icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-                    } else {
-                        icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
-                    }
-                });
-            });
-
-            // Filter Tabs
-            $('.filter-btn').click(function () {
-                $('.filter-btn').removeClass('active bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20').addClass('bg-slate-800/80 text-gray-300 border border-gray-700');
-                $(this).addClass('active bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20').removeClass('bg-slate-800/80 text-gray-300 border border-gray-700');
-
-                const filter = $(this).data('filter');
-
-                if (filter === 'all') {
-                    $('.card-glass').fadeIn();
-                } else if (filter === 'popular') {
-                    $('.card-glass').each(function () {
-                        if ($(this).data('category') === 'popular') {
-                            $(this).fadeIn();
-                        } else {
-                            $(this).fadeOut();
-                        }
-                    });
-                } else if (filter === 'high') {
-                    $('.card-glass').each(function () {
-                        if ($(this).data('category') === 'high') {
-                            $(this).fadeIn();
-                        } else {
-                            $(this).fadeOut();
-                        }
-                    });
-                }
-            });
-
-            // Compare Checkboxes Logic
             let selectedComparePlans = [];
-
-            $('.compare-check').change(function () {
-                const planId = $(this).data('plan');
-
-                if ($(this).is(':checked')) {
-                    if (selectedComparePlans.length >= 3) {
-                        showToast("يمكنك مقارنة 3 باقات كحد أقصى في وقت واحد");
-                        $(this).prop('checked', false);
-                        return;
-                    }
-                    selectedComparePlans.push(planId);
-                } else {
-                    selectedComparePlans = selectedComparePlans.filter(id => id !== planId);
-                }
-
-                updateCompareBar();
-            });
 
             function updateCompareBar() {
                 if (selectedComparePlans.length > 0) {
@@ -1280,7 +915,7 @@
                     tableBody += `<tr class="hover:bg-slate-800/40">`;
                     tableBody += `<td class="p-3 font-bold text-gray-200 border-b border-gray-800">${feat.label}</td>`;
                     selectedComparePlans.forEach(planId => {
-                        tableBody += `<td class="p-3 text-center border-r border-b border-gray-800 text-amber-400 font-bold">${plansData[planId][feat.key]}</td>`;
+                        tableBody += `<td class="p-3 text-center border-r border-b border-gray-800 textamber-400 font-bold">${plansData[planId][feat.key]}</td>`;
                     });
                     tableBody += `</tr>`;
                 });
@@ -1292,18 +927,6 @@
 
             $('#closeCompareModal').click(function () {
                 $('#compareModal').addClass('hidden').removeClass('flex');
-            });
-
-            // Purchase Modal Logic
-            $('.buy-btn').click(function () {
-                const planName = $(this).data('plan-name');
-                const planPrice = $(this).data('plan-price');
-                const taxPrice = $(this).data('tax-price');
-
-                $('#modalPlanTitle').text(planName);
-                $('#modalPlanPrice').text(planPrice + ' ج.م/شهر');
-                $('#modalTaxPrice').text(taxPrice + ' ج.م/شهر');
-                $('#buyModal').removeClass('hidden').addClass('flex');
             });
 
             $('#closeBuyModal').click(function () {
