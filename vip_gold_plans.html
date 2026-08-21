@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>باقات النخبة الذهبية VIP Gold</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,6 +30,14 @@
                             goldDark: '#b45309',
                             bg: '#0f0c1b'
                         }
+                    },
+                    screens: {
+                        'xs': '375px',
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
                     }
                 }
             }
@@ -37,6 +45,10 @@
     </script>
     
     <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: #0f0c1b;
@@ -45,6 +57,7 @@
                 radial-gradient(circle at 100% 100%, rgba(217, 119, 6, 0.15) 0%, transparent 50%);
             background-attachment: fixed;
             color: #f3f4f6;
+            overflow-x: hidden;
         }
         
         .gold-gradient-bg {
@@ -58,16 +71,19 @@
         }
 
         .card-glass {
-            background: rgba(26, 20, 44, 0.85);
+            background: rgba(26, 20, 44, 0.88);
             backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(245, 158, 11, 0.25);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .card-glass:hover {
-            transform: translateY(-6px);
-            border-color: rgba(245, 158, 11, 0.6);
-            box-shadow: 0 20px 40px -15px rgba(217, 119, 6, 0.3);
+        @media (hover: hover) {
+            .card-glass:hover {
+                transform: translateY(-6px);
+                border-color: rgba(245, 158, 11, 0.6);
+                box-shadow: 0 20px 40px -15px rgba(217, 119, 6, 0.3);
+            }
         }
 
         .btn-gold {
@@ -76,15 +92,30 @@
             transition: all 0.2s ease;
         }
 
-        .btn-gold:hover {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+        .btn-gold:active {
+            transform: scale(0.98);
         }
 
-        /* Custom Scrollbar */
+        @media (hover: hover) {
+            .btn-gold:hover {
+                background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+                box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+            }
+        }
+
+        /* Hide horizontal scrollbar for clean touch swipe */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Custom Scrollbar for desktop */
         ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #0f0c1b;
@@ -95,20 +126,20 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between py-8 px-4 sm:px-6 lg:px-8">
+<body class="min-h-screen flex flex-col justify-between py-4 sm:py-8 px-3 sm:px-6 lg:px-8">
 
     <!-- Login Screen Overlay -->
-    <div id="loginOverlay" class="fixed inset-0 bg-slate-950 z-[100] flex items-center justify-center p-4">
+    <div id="loginOverlay" class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl z-[100] flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
         <!-- Ambient background lighting -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-56 sm:w-80 h-56 sm:h-80 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="card-glass rounded-3xl p-6 sm:p-8 max-w-md w-full relative z-10 border border-amber-500/40 shadow-2xl text-right">
-            <div class="text-center mb-6">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-purple-900/40 border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto mb-3 text-2xl shadow-lg">
+        <div class="card-glass rounded-3xl p-5 sm:p-8 max-w-sm sm:max-w-md w-full relative z-10 border border-amber-500/40 shadow-2xl text-right my-auto">
+            <div class="text-center mb-5 sm:mb-6">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-purple-900/40 border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto mb-3 text-xl sm:text-2xl shadow-lg">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <h2 class="text-2xl font-black text-white">منصة عروض <span class="gold-text-gradient">VIP Gold</span></h2>
+                <h2 class="text-xl sm:text-2xl font-black text-white">منصة عروض <span class="gold-text-gradient">VIP Gold</span></h2>
                 <p class="text-xs text-gray-400 mt-1 font-medium">يرجى تسجيل الدخول للوصول إلى لوحة العروض الحصرية</p>
             </div>
 
@@ -120,7 +151,7 @@
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1.5">اسم المستخدم</label>
                     <div class="relative">
-                        <input type="text" id="usernameInput" required placeholder="أدخل اسم المستخدم" class="w-full pl-4 pr-10 py-3 rounded-xl bg-slate-900/90 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-sm outline-none font-medium">
+                        <input type="text" id="usernameInput" required placeholder="أدخل اسم المستخدم" class="w-full pl-4 pr-10 py-3 rounded-xl bg-slate-900/90 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-sm outline-none font-medium min-h-[44px]">
                         <i class="fa-solid fa-user absolute right-3.5 top-3.5 text-gray-500 text-sm"></i>
                     </div>
                 </div>
@@ -128,19 +159,19 @@
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1.5">كلمة المرور</label>
                     <div class="relative">
-                        <input type="password" id="passwordInput" required placeholder="أدخل كلمة المرور" class="w-full pl-4 pr-10 py-3 rounded-xl bg-slate-900/90 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-sm outline-none font-medium dir-ltr text-right">
+                        <input type="password" id="passwordInput" required placeholder="أدخل كلمة المرور" class="w-full pl-4 pr-10 py-3 rounded-xl bg-slate-900/90 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-sm outline-none font-medium dir-ltr text-right min-h-[44px]">
                         <i class="fa-solid fa-lock absolute right-3.5 top-3.5 text-gray-500 text-sm"></i>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full btn-gold font-black py-3 rounded-xl shadow-xl text-sm flex items-center justify-center gap-2 mt-2">
+                <button type="submit" class="w-full btn-gold font-black py-3.5 rounded-xl shadow-xl text-sm flex items-center justify-center gap-2 mt-2 min-h-[48px]">
                     <span>تسجيل الدخول</span>
                     <i class="fa-solid fa-right-to-bracket text-xs"></i>
                 </button>
             </form>
 
-            <div class="mt-6 pt-4 border-t border-gray-800 text-center">
-                <span class="text-[11px] text-amber-400/80 font-bold flex items-center justify-center gap-1.5">
+            <div class="mt-5 sm:mt-6 pt-4 border-t border-gray-800 text-center">
+                <span class="text-[11px] sm:text-xs text-amber-400/80 font-bold flex items-center justify-center gap-1.5">
                     <i class="fa-solid fa-lock text-xs"></i>
                     <span>منطقة محمية خاصة بأعضاء وكلاء النخبة</span>
                 </span>
@@ -148,52 +179,54 @@
         </div>
     </div>
 
-    <!-- Main Content Container (Empty by default for maximum security against Inspect Element bypass) -->
+    <!-- Main Content Container -->
     <div id="appContent" class="hidden flex-col justify-between w-full flex-grow"></div>
 
-    <!-- Floating Compare Drawer -->
-    <div id="compareBar" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900 border border-amber-500/50 text-white px-6 py-3.5 rounded-full shadow-2xl flex items-center gap-4 z-50 hidden transition-all duration-300">
+    <!-- Floating Mobile/Desktop Compare Bar -->
+    <div id="compareBar" class="fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900/95 border border-amber-500/50 text-white px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-2xl sm:rounded-full shadow-2xl flex items-center justify-between gap-2 sm:gap-4 z-40 hidden transition-all duration-300 backdrop-blur-md w-[92%] sm:w-auto max-w-lg">
         <div class="flex items-center gap-2">
-            <span class="w-7 h-7 rounded-full bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs" id="compareCount">0</span>
-            <span class="text-xs sm:text-sm font-bold text-amber-100">باقات مختارة للمقارنة</span>
+            <span class="w-7 h-7 rounded-full bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0" id="compareCount">0</span>
+            <span class="text-xs sm:text-sm font-bold text-amber-100 whitespace-nowrap">باقات مختارة للمقارنة</span>
         </div>
-        <button id="openCompareModalBtn" class="btn-gold font-extrabold px-4 py-1.5 rounded-full text-xs transition">
-            قارن الآن
-        </button>
-        <button id="clearCompareBtn" class="text-gray-400 hover:text-white text-xs font-semibold border-r border-gray-700 pr-3">
-            إلغاء
-        </button>
+        <div class="flex items-center gap-2 shrink-0">
+            <button id="openCompareModalBtn" class="btn-gold font-extrabold px-3.5 sm:px-4 py-1.5 rounded-xl sm:rounded-full text-xs transition">
+                قارن الآن
+            </button>
+            <button id="clearCompareBtn" class="text-gray-400 hover:text-white text-xs font-semibold px-2 py-1">
+                إلغاء
+            </button>
+        </div>
     </div>
 
     <!-- Purchase Modal -->
-    <div id="buyModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-slate-900 border border-amber-500/30 rounded-3xl max-w-md w-full p-6 shadow-2xl relative text-right text-gray-100 max-h-[90vh] overflow-y-auto">
-            <button id="closeBuyModal" class="absolute top-4 left-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+    <div id="buyModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-4 hidden overflow-y-auto">
+        <div class="bg-slate-900 border border-amber-500/30 rounded-3xl max-w-md w-full p-5 sm:p-6 shadow-2xl relative text-right text-gray-100 my-auto max-h-[92vh] overflow-y-auto">
+            <button id="closeBuyModal" class="absolute top-3.5 left-3.5 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="text-center mb-5">
+            <div class="text-center mb-4 sm:mb-5 pr-6 sm:pr-0">
                 <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center mx-auto mb-2 text-xl">
                     <i class="fa-solid fa-crown"></i>
                 </div>
-                <h3 class="text-xl font-black text-amber-400" id="modalPlanTitle">تأكيد طلب الاشتراك</h3>
-                <p class="text-xs text-gray-400 mt-1">قم بملء البيانات لتسجيل الطلب وتفعيل خصم الـ 50% على النظام</p>
+                <h3 class="text-lg sm:text-xl font-black text-amber-400" id="modalPlanTitle">تأكيد طلب الاشتراك</h3>
+                <p class="text-[11px] sm:text-xs text-gray-400 mt-1">قم بملء البيانات لتسجيل الطلب وتفعيل خصم الـ 50% على النظام</p>
             </div>
 
-            <form id="purchaseForm" class="space-y-4">
+            <form id="purchaseForm" class="space-y-3.5">
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">الاسم بالكامل</label>
-                    <input type="text" required placeholder="أدخل اسمك الكريم" class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-sm outline-none">
+                    <input type="text" required placeholder="أدخل اسمك الكريم" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none min-h-[42px]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">رقم الموبايل للتواصل</label>
-                    <input type="tel" required placeholder="01x xxx xxxx" class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-sm outline-none text-right">
+                    <input type="tel" required placeholder="01x xxx xxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none text-right min-h-[42px]">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">نوع الطلب</label>
-                    <select class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-sm outline-none">
+                    <select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none min-h-[42px]">
                         <option>خط جديد مع تفعيل الخصم 50%</option>
                         <option>تحويل خطي الحالي لباقات Gold</option>
                         <option>تحويل رقمي من شبكة أخرى (MNP Port In)</option>
@@ -202,18 +235,18 @@
 
                 <div>
                     <label class="block text-xs font-bold text-amber-300 mb-1">كود التفعيل (اختياري)</label>
-                    <input type="text" placeholder="أدخل كود الخصم الخاص بك" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-amber-500/40 text-amber-300 font-mono text-sm outline-none dir-ltr text-center">
+                    <input type="text" placeholder="أدخل كود الخصم الخاص بك" class="w-full px-3.5 py-2 rounded-xl bg-slate-800 border border-amber-500/40 text-amber-300 font-mono text-xs sm:text-sm outline-none dir-ltr text-center min-h-[40px]">
                 </div>
 
                 <!-- Price summary in modal -->
-                <div class="bg-amber-500/10 border border-amber-500/30 p-3.5 rounded-2xl space-y-2 text-xs font-bold">
+                <div class="bg-amber-500/10 border border-amber-500/30 p-3 rounded-2xl space-y-2 text-xs font-bold">
                     <div class="flex justify-between text-gray-300">
                         <span>السعر الأساسي بعد الخصم:</span>
                         <span id="modalPlanPrice" class="text-amber-400 font-extrabold">300 ج.م/شهر</span>
                     </div>
                     <div class="flex justify-between text-emerald-400 border-t border-amber-500/20 pt-1.5">
                         <span>الإجمالي بـعـد الضريبة:</span>
-                        <span id="modalTaxPrice" class="font-extrabold text-sm">452.41 ج.م/شهر</span>
+                        <span id="modalTaxPrice" class="font-extrabold text-xs sm:text-sm">452.41 ج.م/شهر</span>
                     </div>
                     <div class="flex justify-between text-amber-300 border-t border-amber-500/20 pt-1.5 text-[11px]">
                         <span>رسوم تفعيل الخصم (مرة واحدة):</span>
@@ -221,23 +254,24 @@
                     </div>
                 </div>
 
-                <button type="submit" class="w-full btn-gold font-black py-3 rounded-xl shadow-lg text-sm">
+                <button type="submit" class="w-full btn-gold font-black py-3 rounded-xl shadow-lg text-xs sm:text-sm min-h-[46px]">
                     تأكيد الطلب وتفعيل الخصم
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- Comparison Table Modal -->
-    <div id="compareModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-slate-900 border border-amber-500/30 rounded-3xl max-w-5xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto text-gray-100">
-            <button id="closeCompareModal" class="absolute top-4 left-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+    <!-- Comparison Modal (Mobile Responsive) -->
+    <div id="compareModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4 hidden overflow-y-auto">
+        <div class="bg-slate-900 border border-amber-500/30 rounded-3xl max-w-5xl w-full p-4 sm:p-6 shadow-2xl relative max-h-[92vh] overflow-y-auto text-gray-100 my-auto">
+            <button id="closeCompareModal" class="absolute top-3 left-3 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <h3 class="text-2xl font-black text-amber-400 mb-6 text-center">جدول مقارنة باقات VIP Gold</h3>
+            <h3 class="text-xl sm:text-2xl font-black text-amber-400 mb-4 sm:mb-6 text-center pr-6 sm:pr-0">جدول مقارنة باقات VIP Gold</h3>
 
-            <div class="overflow-x-auto">
+            <!-- Desktop Table View (Hidden on small mobile) -->
+            <div class="hidden md:block overflow-x-auto">
                 <table class="w-full text-right text-xs sm:text-sm border-collapse" id="compareTable">
                     <thead>
                         <tr class="border-b border-amber-500/30 bg-slate-800/50">
@@ -248,12 +282,16 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Mobile Card Comparison View (Visible on mobile screens) -->
+            <div class="md:hidden space-y-4" id="compareMobileCards">
+            </div>
         </div>
     </div>
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 border border-amber-400 text-white px-6 py-3 rounded-full text-xs sm:text-sm font-bold shadow-2xl z-50 hidden flex items-center gap-2">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+    <div id="toast" class="fixed top-4 sm:top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 border border-amber-400 text-white px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold shadow-2xl z-50 hidden flex items-center gap-2 max-w-[90vw] text-center justify-center">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-base shrink-0"></i>
         <span id="toastMsg">تم بنجاح</span>
     </div>
 
@@ -263,129 +301,135 @@
             // Template for secure rendering of the application content
             function renderAppHTML() {
                 return `
-                <header class="max-w-5xl mx-auto w-full mb-10">
-                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-950/90 via-slate-900/95 to-amber-950/80 border border-amber-500/30 p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
-                        <div class="absolute -top-20 -right-20 w-60 h-60 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                        <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+                <header class="max-w-5xl mx-auto w-full mb-6 sm:mb-10">
+                    <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-purple-950/90 via-slate-900/95 to-amber-950/80 border border-amber-500/30 p-4 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-xl">
+                        <div class="absolute -top-20 -right-20 w-48 sm:w-60 h-48 sm:h-60 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="absolute -bottom-20 -left-20 w-48 sm:w-60 h-48 sm:h-60 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
-                        <div class="flex items-center justify-between mb-4 bg-slate-900/60 border border-amber-500/20 p-2.5 px-4 rounded-2xl text-xs">
-                            <div class="flex items-center gap-2 font-bold text-amber-300">
-                                <i class="fa-solid fa-user-circle text-base text-amber-400"></i>
-                                <span>مرحباً بك: <strong class="text-white" id="currentUserName">ahmed</strong></span>
+                        <div class="flex items-center justify-between mb-4 bg-slate-900/60 border border-amber-500/20 p-2 sm:p-2.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl text-xs">
+                            <div class="flex items-center gap-1.5 sm:gap-2 font-bold text-amber-300 text-[11px] sm:text-xs truncate">
+                                <i class="fa-solid fa-user-circle text-sm sm:text-base text-amber-400 shrink-0"></i>
+                                <span class="truncate">مرحباً بك: <strong class="text-white" id="currentUserName">ahmed</strong></span>
                             </div>
-                            <button id="logoutBtn" class="bg-red-500/20 hover:bg-red-500 text-red-300 hover:text-white border border-red-500/40 px-3 py-1 rounded-xl transition flex items-center gap-1.5 font-bold">
-                                <span>تسجيل الخروج</span>
-                                <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i>
+                            <button id="logoutBtn" class="bg-red-500/20 hover:bg-red-500 text-red-300 hover:text-white border border-red-500/40 px-2.5 py-1 rounded-lg sm:rounded-xl transition flex items-center gap-1 font-bold text-[11px] sm:text-xs shrink-0">
+                                <span>خروج</span>
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </button>
                         </div>
 
-                        <div class="relative z-10 text-center space-y-5">
-                            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-5 py-2 rounded-full text-amber-300 font-bold text-base sm:text-lg shadow-inner">
+                        <div class="relative z-10 text-center space-y-3 sm:space-y-5">
+                            <div class="inline-flex items-center gap-1.5 sm:gap-2 bg-amber-500/10 border border-amber-500/30 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-amber-300 font-bold text-xs sm:text-base shadow-inner">
                                 <i class="fa-solid fa-kaaba text-amber-400"></i>
                                 <span>السلام عليكم ورحمة الله وبركاته</span>
                             </div>
 
-                            <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+                            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
                                 عروض الباقات الفاخرة <span class="gold-text-gradient">VIP Gold</span>
                             </h1>
 
-                            <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
+                            <p class="text-gray-300 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto font-medium leading-relaxed px-2">
                                 استمتع بأقوى ميزات الاتصالات والإنترنت العائلي مع خصم 50% مدى الحياة مسجّل بالسيستم رسمياً.
                             </p>
 
-                            <div class="mt-6 bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-500/20 border-2 border-amber-400/50 rounded-2xl p-5 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative overflow-hidden">
-                                <div class="absolute top-0 left-0 bg-amber-500 text-slate-950 font-black text-[11px] px-4 py-1 rounded-br-xl shadow-md">
+                            <!-- Life-time Offer Banner -->
+                            <div class="mt-4 sm:mt-6 bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-500/20 border-2 border-amber-400/50 rounded-2xl p-4 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative overflow-hidden">
+                                <div class="absolute top-0 left-0 bg-amber-500 text-slate-950 font-black text-[10px] sm:text-[11px] px-3 sm:px-4 py-0.5 sm:py-1 rounded-br-xl shadow-md">
                                     عرض استثنائي حصري 🔥
                                 </div>
 
-                                <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-2">
-                                    <div class="space-y-2 text-center md:text-right">
-                                        <div class="flex items-center justify-center md:justify-start gap-2 text-amber-300 font-extrabold text-lg sm:text-xl">
-                                            <i class="fa-solid fa-gem text-amber-400"></i>
+                                <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 pt-2">
+                                    <div class="space-y-1.5 sm:space-y-2 text-center md:text-right w-full">
+                                        <div class="flex items-center justify-center md:justify-start gap-2 text-amber-300 font-extrabold text-base sm:text-lg lg:text-xl">
+                                            <i class="fa-solid fa-gem text-amber-400 shrink-0"></i>
                                             <span>خصم 50% مدى الحياة على الفاتورة الشهرية</span>
                                         </div>
                                         <p class="text-xs sm:text-sm text-gray-300 font-semibold leading-relaxed">
-                                            • رسوم تفعيل الخصم: <strong class="text-amber-400 font-black text-base">2,500 جنيه مصري فقط</strong> (تُدفع مرة واحدة فقط وقبل تفعيل الخصم).
+                                            • رسوم تفعيل الخصم: <strong class="text-amber-400 font-black text-sm sm:text-base">2,500 جنيه مصري فقط</strong> (تُدفع مرة واحدة فقط وقبل تفعيل الخصم).
                                         </p>
-                                        <p class="text-xs sm:text-sm text-emerald-400 font-bold flex items-center justify-center md:justify-start gap-1.5 pt-1">
-                                            <i class="fa-solid fa-circle-check"></i>
+                                        <p class="text-[11px] sm:text-xs lg:text-sm text-emerald-400 font-bold flex items-center justify-center md:justify-start gap-1.5 pt-0.5">
+                                            <i class="fa-solid fa-circle-check shrink-0"></i>
                                             <span>يبدأ احتساب الخصم من أول فاتورة بعد التفعيل ومسجّل على النظام حتى عام 2100</span>
                                         </p>
                                     </div>
 
-                                    <div class="shrink-0 bg-slate-950/80 border border-amber-400/40 rounded-2xl p-4 text-center min-w-[170px]">
-                                        <span class="block text-xs font-bold text-gray-400">رسوم التفعيل (مرة واحدة)</span>
-                                        <span class="block text-3xl font-black text-amber-400 my-1">2,500 <span class="text-xs text-gray-300">ج.م</span></span>
-                                        <span class="block text-[11px] font-extrabold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/30">خصم 50% حتى 2100</span>
+                                    <div class="shrink-0 bg-slate-950/80 border border-amber-400/40 rounded-2xl p-3 sm:p-4 text-center w-full md:w-auto min-w-[160px]">
+                                        <span class="block text-[11px] sm:text-xs font-bold text-gray-400">رسوم التفعيل (مرة واحدة)</span>
+                                        <span class="block text-2xl sm:text-3xl font-black text-amber-400 my-0.5 sm:my-1">2,500 <span class="text-xs text-gray-300">ج.م</span></span>
+                                        <span class="inline-block text-[10px] sm:text-[11px] font-extrabold text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30">خصم 50% حتى 2100</span>
                                     </div>
                                 </div>
 
-                                <div class="mt-4 pt-3 border-t border-amber-500/30 text-xs text-amber-200/90 font-medium leading-normal flex items-start gap-2 bg-amber-950/30 p-2.5 rounded-xl">
-                                    <i class="fa-solid fa-circle-info text-amber-400 text-sm shrink-0 mt-0.5"></i>
+                                <div class="mt-3.5 pt-2.5 border-t border-amber-500/30 text-[11px] sm:text-xs text-amber-200/90 font-medium leading-normal flex items-start gap-2 bg-amber-950/30 p-2.5 rounded-xl">
+                                    <i class="fa-solid fa-circle-info text-amber-400 text-xs sm:text-sm shrink-0 mt-0.5"></i>
                                     <span>توضيح هام: يُطبق خصم الـ 50% على سعر الباقة الأساسية. الضريبة الحكومية المفروضة تُحسب بالكامل طبقاً للوائح والقوانين (موضحة بدقة بالأسفل داخل كل باقة).</span>
                                 </div>
                             </div>
 
-                            <div class="mt-5 bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative backdrop-blur-md">
-                                <div class="flex items-center gap-2 text-amber-400 font-black text-sm sm:text-base mb-4 border-b border-amber-500/20 pb-3">
-                                    <i class="fa-solid fa-store text-amber-400 text-lg"></i>
+                            <!-- Steps Box -->
+                            <div class="mt-4 sm:mt-5 bg-slate-900/90 border border-amber-500/40 rounded-2xl p-4 sm:p-6 text-right max-w-3xl mx-auto shadow-xl relative backdrop-blur-md">
+                                <div class="flex items-center gap-2 text-amber-400 font-black text-xs sm:text-base mb-3 border-b border-amber-500/20 pb-2.5">
+                                    <i class="fa-solid fa-store text-amber-400 text-sm sm:text-lg"></i>
                                     <span>خطوات الاستفادة من الخصم والتسجيل بالفرع:</span>
                                 </div>
 
-                                <div class="space-y-3 text-xs sm:text-sm text-gray-200 font-semibold leading-relaxed">
-                                    <div class="flex items-start gap-3">
-                                        <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">1</span>
+                                <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-gray-200 font-semibold leading-relaxed">
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="bg-amber-500 text-slate-950 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shrink-0 font-black text-[11px] sm:text-xs mt-0.5 shadow">1</span>
                                         <p>اختر الباقة المناسبة لك ولعائلتك من قائمة الباقات بالأسفل.</p>
                                     </div>
 
-                                    <div class="flex items-start gap-3">
-                                        <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">2</span>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="bg-amber-500 text-slate-950 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shrink-0 font-black text-[11px] sm:text-xs mt-0.5 shadow">2</span>
                                         <p>توجه إلى الفرع وأبلغ الموظف المختص بأنك تريد التحويل إلى <strong class="text-amber-300 font-bold">(اسم الباقة التي اخترتها)</strong>.</p>
                                     </div>
 
-                                    <div class="flex items-start gap-3">
-                                        <span class="bg-amber-500 text-slate-950 rounded-full w-6 h-6 flex items-center justify-center shrink-0 font-black text-xs mt-0.5 shadow">3</span>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="bg-amber-500 text-slate-950 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shrink-0 font-black text-[11px] sm:text-xs mt-0.5 shadow">3</span>
                                         <p>يتم تسجيل الباقة برقم يبدأ بـ <strong class="text-amber-300 font-extrabold dir-ltr inline-block">015</strong> إذا كان متاحاً. وإذا لم يكن متاحاً، يمكنك شراء خط جديد لتسجيل الباقة عليه، ويكون هذا الرقم هو <strong class="text-amber-400 font-extrabold">المسؤول عن إدارة الباقة وتوزيع الميزات بين أفراد العائلة</strong>.</p>
                                     </div>
                                 </div>
 
-                                <div class="mt-4 bg-gradient-to-r from-amber-500/15 via-purple-900/30 to-amber-500/10 border border-amber-400/40 rounded-xl p-3.5 text-xs sm:text-sm text-amber-200 font-medium flex items-start gap-3 shadow-inner">
-                                    <i class="fa-solid fa-lightbulb text-amber-400 text-lg shrink-0 mt-0.5"></i>
+                                <div class="mt-3.5 bg-gradient-to-r from-amber-500/15 via-purple-900/30 to-amber-500/10 border border-amber-400/40 rounded-xl p-3 sm:p-3.5 text-xs sm:text-sm text-amber-200 font-medium flex items-start gap-2.5 shadow-inner">
+                                    <i class="fa-solid fa-lightbulb text-amber-400 text-base sm:text-lg shrink-0 mt-0.5"></i>
                                     <div>
-                                        <strong class="text-amber-300 font-extrabold block mb-1">نصيحة مميزة عند التحويل:</strong>
-                                        <p class="text-gray-300 leading-normal">من الأفضل شراء جميع الأرقام التي تحتاجها فوراً عند التحويل، لتتمكن من اختيار أرقام مميزة تناسب احتياجك بالنسبة لأرقام 015.</p>
+                                        <strong class="text-amber-300 font-extrabold block mb-0.5 sm:mb-1">نصيحة مميزة عند التحويل:</strong>
+                                        <p class="text-gray-300 leading-normal text-[11px] sm:text-xs">من الأفضل شراء جميع الأرقام التي تحتاجها فوراً عند التحويل، لتتمكن من اختيار أرقام مميزة تناسب احتياجك بالنسبة لأرقام 015.</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="pt-4 flex flex-wrap justify-center items-center gap-3">
-                                <button class="filter-btn active px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 transition" data-filter="all">
-                                    جميع الباقات (5)
-                                </button>
-                                <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition" data-filter="popular">
-                                    الأكثر طلباً 🔥
-                                </button>
-                                <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition" data-filter="high">
-                                    الباقات العالية والممتازة 🚀
-                                </button>
+                            <!-- Mobile Quick Plan Navigation Bar (Visible on touch/small screens) -->
+                            <div class="pt-2 sm:pt-4">
+                                <div class="text-amber-400/90 font-bold text-xs mb-2 block sm:hidden">اختر تصفية الباقات:</div>
+                                <div class="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center items-center gap-2 overflow-x-auto no-scrollbar pb-2 sm:pb-0 px-1">
+                                    <button class="filter-btn active shrink-0 px-4 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 transition min-h-[38px]" data-filter="all">
+                                        جميع الباقات (5)
+                                    </button>
+                                    <button class="filter-btn shrink-0 px-4 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition min-h-[38px]" data-filter="popular">
+                                        الأكثر طلباً 🔥
+                                    </button>
+                                    <button class="filter-btn shrink-0 px-4 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm bg-slate-800/80 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-300 transition min-h-[38px]" data-filter="high">
+                                        الباقات العالية والممتازة 🚀
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                <main class="max-w-7xl mx-auto w-full flex-grow">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5" id="plansGrid">
+                <main class="max-w-7xl mx-auto w-full flex-grow px-1 sm:px-0">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5" id="plansGrid">
                         <!-- Card 1 -->
-                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="600" data-category="popular">
+                        <div class="card-glass rounded-3xl p-4 sm:p-5 relative flex flex-col justify-between" data-price="600" data-category="popular">
                             <div>
                                 <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 600</h3>
+                                    <span class="block text-[11px] font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-lg sm:text-xl font-black text-amber-400 tracking-wide">WE Gold 600</h3>
                                 </div>
                                 <div class="flex justify-between items-start mb-3">
                                     <div>
                                         <div class="flex items-baseline gap-1">
-                                            <span class="text-3xl font-black text-amber-400 tracking-tight">300</span>
+                                            <span class="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight">300</span>
                                             <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
                                         </div>
                                         <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 600 ج.م</div>
@@ -397,45 +441,30 @@
                                 </div>
                                 <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
                                     <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
-                                    <span class="block text-base font-black text-emerald-400">452.41 ج.م / شهرياً</span>
+                                    <span class="block text-sm sm:text-base font-black text-emerald-400">452.41 ج.م / شهرياً</span>
                                 </div>
-                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/60 p-2 rounded-xl border border-gray-800">
                                     <label for="comp-600" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
                                     <input type="checkbox" id="comp-600" data-plan="600" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
                                 </div>
-                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 600" data-plan-price="300" data-tax-price="452.41">
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-3 flex items-center justify-center gap-2 text-xs min-h-[42px]" data-plan-name="باقة WE Gold 600" data-plan-price="300" data-tax-price="452.41">
                                     <span>طلب الاشتراك</span>
                                     <i class="fa-solid fa-cart-shopping text-xs"></i>
                                 </button>
-                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-3 text-center">
                                     <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs">
                                         <i class="fa-solid fa-people-group text-amber-400"></i>
                                         <span>10,000 دقيقة بين أفراد العائلة</span>
                                     </div>
                                     <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
                                 </div>
-                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                        <span class="text-gray-100">20 جيجا موبايل إنترنت</span>
-                                        <i class="fa-solid fa-mobile-screen-button text-amber-400"></i>
-                                    </div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                        <span class="text-gray-100">3,700 دقيقة أو رسالة</span>
-                                        <i class="fa-regular fa-clock text-amber-400"></i>
-                                    </div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                        <span class="text-gray-100">2 خطوط عيلة</span>
-                                        <i class="fa-solid fa-users text-amber-400"></i>
-                                    </div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                        <span class="text-gray-100">150 جيجا إنترنت أرضى أو WE Air 150</span>
-                                        <i class="fa-solid fa-wifi text-amber-400"></i>
-                                    </div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold">
-                                        <span class="text-gray-100">25 دقيقة دولية</span>
-                                        <i class="fa-solid fa-globe text-amber-400"></i>
-                                    </div>
-                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                <div class="border-t border-gray-800 pt-3 space-y-2 text-xs">
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">20 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">3,700 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">2 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">150 جيجا إنترنت أرضى أو Air 150</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">25 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
+                                    <div class="extra-details hidden space-y-2 pt-2 border-t border-dashed border-gray-800">
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1.5 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1000 جنيه قسيمة شراء سنوية</span><i class="fa-solid fa-ticket text-amber-400"></i></div>
@@ -445,28 +474,31 @@
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">20 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     </div>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                <div class="mt-3 pt-2.5 border-t border-gray-800/80 flex items-center justify-center gap-3">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2 py-0.5 rounded text-[10px]">TOD</div>
+                                    <div class="text-[10px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[8px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
                                 </div>
                             </div>
                             <div class="text-center mt-3">
-                                <button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button>
+                                <button class="toggle-details-btn py-1 px-4 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition text-xs flex items-center justify-center gap-1.5 mx-auto">
+                                    <span>تفاصيل إضافية</span>
+                                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                                </button>
                             </div>
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between border-2 border-amber-500/40" data-price="890" data-category="popular">
+                        <div class="card-glass rounded-3xl p-4 sm:p-5 relative flex flex-col justify-between border-2 border-amber-500/50" data-price="890" data-category="popular">
                             <div class="absolute -top-3 right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-lg">الأكثر طلباً 🔥</div>
                             <div>
                                 <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3 pt-2">
-                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 890</h3>
+                                    <span class="block text-[11px] font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-lg sm:text-xl font-black text-amber-400 tracking-wide">WE Gold 890</h3>
                                 </div>
                                 <div class="flex justify-between items-start mb-3">
                                     <div>
                                         <div class="flex items-baseline gap-1">
-                                            <span class="text-3xl font-black text-amber-400 tracking-tight">445</span>
+                                            <span class="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight">445</span>
                                             <span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span>
                                         </div>
                                         <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 890 ج.م</div>
@@ -475,27 +507,27 @@
                                 </div>
                                 <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center">
                                     <span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span>
-                                    <span class="block text-base font-black text-emerald-400">664.72 ج.م / شهرياً</span>
+                                    <span class="block text-sm sm:text-base font-black text-emerald-400">664.72 ج.م / شهرياً</span>
                                 </div>
-                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800">
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/60 p-2 rounded-xl border border-gray-800">
                                     <label for="comp-890" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label>
                                     <input type="checkbox" id="comp-890" data-plan="890" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer">
                                 </div>
-                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 890" data-plan-price="445" data-tax-price="664.72">
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-3 flex items-center justify-center gap-2 text-xs min-h-[42px]" data-plan-name="باقة WE Gold 890" data-plan-price="445" data-tax-price="664.72">
                                     <span>طلب الاشتراك</span>
                                     <i class="fa-solid fa-cart-shopping text-xs"></i>
                                 </button>
-                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center">
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-3 text-center">
                                     <div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div>
                                     <span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span>
                                 </div>
-                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                <div class="border-t border-gray-800 pt-3 space-y-2 text-xs">
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">30 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">3 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">250 جيجا إنترنت أرضى أو WE Air 150</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">250 جيجا إنترنت أرضى أو Air 150</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">35 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
-                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                    <div class="extra-details hidden space-y-2 pt-2 border-t border-dashed border-gray-800">
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1.5 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1500 جنيه قسيمة شراء سنوية</span><i class="fa-solid fa-ticket text-amber-400"></i></div>
@@ -506,39 +538,44 @@
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">20 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     </div>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                <div class="mt-3 pt-2.5 border-t border-gray-800/80 flex items-center justify-center gap-3">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2 py-0.5 rounded text-[10px]">TOD</div>
+                                    <div class="text-[10px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[8px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
                                 </div>
                             </div>
-                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                            <div class="text-center mt-3">
+                                <button class="toggle-details-btn py-1 px-4 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition text-xs flex items-center justify-center gap-1.5 mx-auto">
+                                    <span>تفاصيل إضافية</span>
+                                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="1200" data-category="high">
+                        <div class="card-glass rounded-3xl p-4 sm:p-5 relative flex flex-col justify-between" data-price="1200" data-category="high">
                             <div>
                                 <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 1200</h3>
+                                    <span class="block text-[11px] font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-lg sm:text-xl font-black text-amber-400 tracking-wide">WE Gold 1200</h3>
                                 </div>
                                 <div class="flex justify-between items-start mb-3">
                                     <div>
-                                        <div class="flex items-baseline gap-1"><span class="text-3xl font-black text-amber-400 tracking-tight">600</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
+                                        <div class="flex items-baseline gap-1"><span class="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight">600</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
                                         <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 1200 ج.م</div>
                                     </div>
                                     <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><i class="fa-solid fa-gem text-[10px]"></i><span>WE GOLD</span></div>
                                 </div>
-                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-base font-black text-emerald-400">891.67 ج.م / شهرياً</span></div>
-                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800"><label for="comp-1200" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-1200" data-plan="1200" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
-                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 1200" data-plan-price="600" data-tax-price="891.67"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
-                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
-                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-sm sm:text-base font-black text-emerald-400">891.67 ج.م / شهرياً</span></div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/60 p-2 rounded-xl border border-gray-800"><label for="comp-1200" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-1200" data-plan="1200" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-3 flex items-center justify-center gap-2 text-xs min-h-[42px]" data-plan-name="باقة WE Gold 1200" data-plan-price="600" data-tax-price="891.67"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-3 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2 text-xs">
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">65 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">8,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">4 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">250 جيجا إنترنت أرضى أو WE Air 250</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">250 جيجا إنترنت أرضى أو Air 250</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">WE Ardy 20</span><i class="fa-solid fa-phone text-amber-400"></i></div>
-                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                    <div class="extra-details hidden space-y-2 pt-2 border-t border-dashed border-gray-800">
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">45 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">2 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">1 نقطة مقابل كل جنيه بالفاتورة</span><i class="fa-solid fa-gift text-amber-400"></i></div>
@@ -550,39 +587,44 @@
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     </div>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                <div class="mt-3 pt-2.5 border-t border-gray-800/80 flex items-center justify-center gap-3">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2 py-0.5 rounded text-[10px]">TOD</div>
+                                    <div class="text-[10px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[8px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
                                 </div>
                             </div>
-                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                            <div class="text-center mt-3">
+                                <button class="toggle-details-btn py-1 px-4 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition text-xs flex items-center justify-center gap-1.5 mx-auto">
+                                    <span>تفاصيل إضافية</span>
+                                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <!-- Card 4 -->
-                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between" data-price="1500" data-category="high">
+                        <div class="card-glass rounded-3xl p-4 sm:p-5 relative flex flex-col justify-between" data-price="1500" data-category="high">
                             <div>
                                 <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 1500</h3>
+                                    <span class="block text-[11px] font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-lg sm:text-xl font-black text-amber-400 tracking-wide">WE Gold 1500</h3>
                                 </div>
                                 <div class="flex justify-between items-start mb-3">
                                     <div>
-                                        <div class="flex items-baseline gap-1"><span class="text-3xl font-black text-amber-400 tracking-tight">750</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
+                                        <div class="flex items-baseline gap-1"><span class="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight">750</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
                                         <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 1500 ج.م</div>
                                     </div>
                                     <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><i class="fa-solid fa-gem text-[10px]"></i><span>WE GOLD</span></div>
                                 </div>
-                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-base font-black text-emerald-400">1,111.30 ج.م / شهرياً</span></div>
-                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800"><label for="comp-1500" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-1500" data-plan="1500" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
-                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 1500" data-plan-price="750" data-tax-price="1111.30"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
-                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
-                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-sm sm:text-base font-black text-emerald-400">1,111.30 ج.م / شهرياً</span></div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/60 p-2 rounded-xl border border-gray-800"><label for="comp-1500" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-1500" data-plan="1500" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-3 flex items-center justify-center gap-2 text-xs min-h-[42px]" data-plan-name="باقة WE Gold 1500" data-plan-price="750" data-tax-price="1111.30"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-3 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2 text-xs">
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">70 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">9,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">5 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">400 جيجا إنترنت أرضى أو WE Air 250</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">400 جيجا إنترنت أرضى أو Air 250</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">WE Ardy 20</span><i class="fa-solid fa-phone text-amber-400"></i></div>
-                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                    <div class="extra-details hidden space-y-2 pt-2 border-t border-dashed border-gray-800">
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">4 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">4 دقيقة إرسال WE Flight</span><i class="fa-solid fa-plane-departure text-amber-400"></i></div>
@@ -595,39 +637,44 @@
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     </div>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                <div class="mt-3 pt-2.5 border-t border-gray-800/80 flex items-center justify-center gap-3">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2 py-0.5 rounded text-[10px]">TOD</div>
+                                    <div class="text-[10px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[8px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
                                 </div>
                             </div>
-                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                            <div class="text-center mt-3">
+                                <button class="toggle-details-btn py-1 px-4 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition text-xs flex items-center justify-center gap-1.5 mx-auto">
+                                    <span>تفاصيل إضافية</span>
+                                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <!-- Card 5 -->
-                        <div class="card-glass rounded-3xl p-5 relative flex flex-col justify-between border border-amber-500/50" data-price="2300" data-category="high">
+                        <div class="card-glass rounded-3xl p-4 sm:p-5 relative flex flex-col justify-between border border-amber-500/50" data-price="2300" data-category="high">
                             <div>
                                 <div class="bg-gradient-to-r from-amber-500/20 via-purple-900/40 to-amber-500/20 border border-amber-500/40 rounded-2xl p-2 text-center mb-3">
-                                    <span class="block text-xs font-bold text-amber-300/80">اسم الباقة</span>
-                                    <h3 class="text-xl font-black text-amber-400 tracking-wide">WE Gold 2300</h3>
+                                    <span class="block text-[11px] font-bold text-amber-300/80">اسم الباقة</span>
+                                    <h3 class="text-lg sm:text-xl font-black text-amber-400 tracking-wide">WE Gold 2300</h3>
                                 </div>
                                 <div class="flex justify-between items-start mb-3">
                                     <div>
-                                        <div class="flex items-baseline gap-1"><span class="text-3xl font-black text-amber-400 tracking-tight">1150</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
+                                        <div class="flex items-baseline gap-1"><span class="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight">1150</span><span class="text-[11px] font-semibold text-gray-400">ج.م أساسي</span></div>
                                         <div class="text-[11px] font-bold text-gray-400 line-through">بدلاً من 2300 ج.م</div>
                                     </div>
                                     <div class="gold-gradient-bg text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow"><i class="fa-solid fa-crown text-[10px]"></i><span>WE GOLD</span></div>
                                 </div>
-                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-base font-black text-emerald-400">1,696.98 ج.م / شهرياً</span></div>
-                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/50 p-1.5 rounded-xl border border-gray-800"><label for="comp-2300" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-2300" data-plan="2300" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
-                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-4 flex items-center justify-center gap-2 text-xs" data-plan-name="باقة WE Gold 2300" data-plan-price="1150" data-tax-price="1696.98"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
-                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-4 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
-                                <div class="border-t border-gray-800 pt-3 space-y-2.5 text-xs">
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2 mb-3 text-center"><span class="block text-[11px] text-gray-300 font-medium">الإجمالي بعد الضريبة:</span><span class="block text-sm sm:text-base font-black text-emerald-400">1,696.98 ج.م / شهرياً</span></div>
+                                <div class="flex items-center justify-end gap-2 mb-3 bg-slate-900/60 p-2 rounded-xl border border-gray-800"><label for="comp-2300" class="text-[11px] font-bold text-amber-300 cursor-pointer hover:underline">أضف للمقارنة</label><input type="checkbox" id="comp-2300" data-plan="2300" class="compare-check w-4 h-4 rounded accent-amber-500 cursor-pointer"></div>
+                                <button class="buy-btn w-full btn-gold font-black py-2.5 px-3 rounded-xl mb-3 flex items-center justify-center gap-2 text-xs min-h-[42px]" data-plan-name="باقة WE Gold 2300" data-plan-price="1150" data-tax-price="1696.98"><span>طلب الاشتراك</span><i class="fa-solid fa-cart-shopping text-xs"></i></button>
+                                <div class="bg-gradient-to-r from-amber-500/20 to-purple-600/20 border border-amber-400/40 rounded-xl p-2.5 mb-3 text-center"><div class="flex items-center justify-center gap-1.5 text-amber-300 font-black text-xs"><i class="fa-solid fa-people-group text-amber-400"></i><span>10,000 دقيقة بين أفراد العائلة</span></div><span class="text-[10px] text-amber-200/80 font-bold block mt-0.5">ميزة رائعة مجانية 🔥</span></div>
+                                <div class="border-t border-gray-800 pt-3 space-y-2 text-xs">
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">130 جيجا موبايل إنترنت</span><i class="fa-solid fa-mobile-screen-button text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">10,000 دقيقة أو رسالة</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6 خطوط عيلة</span><i class="fa-solid fa-users text-amber-400"></i></div>
-                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">750 جيجا إنترنت أرضى أو WE Air 650</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
+                                    <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">750 جيجا إنترنت أرضى أو Air 650</span><i class="fa-solid fa-wifi text-amber-400"></i></div>
                                     <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">WE Ardy 20</span><i class="fa-solid fa-phone text-amber-400"></i></div>
-                                    <div class="extra-details hidden space-y-2.5 pt-2 border-t border-dashed border-gray-800">
+                                    <div class="extra-details hidden space-y-2 pt-2 border-t border-dashed border-gray-800">
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">75 دقيقة دولية</span><i class="fa-solid fa-globe text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6 جيجا تجوال أسبوعية (مرتين بالسنة)</span><i class="fa-solid fa-plane text-amber-400"></i></div>
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">6 دقيقة إرسال WE Flight</span><i class="fa-solid fa-plane-departure text-amber-400"></i></div>
@@ -640,12 +687,17 @@
                                         <div class="flex items-center justify-between text-gray-300 font-semibold"><span class="text-gray-100">60 دقيقة 140 الدليل</span><i class="fa-regular fa-clock text-amber-400"></i></div>
                                     </div>
                                 </div>
-                                <div class="mt-4 pt-3 border-t border-gray-800/80 flex items-center justify-center gap-4">
-                                    <div class="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded text-[11px]">TOD</div>
-                                    <div class="text-[11px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[9px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
+                                <div class="mt-3 pt-2.5 border-t border-gray-800/80 flex items-center justify-center gap-3">
+                                    <div class="bg-amber-400 text-slate-950 font-black px-2 py-0.5 rounded text-[10px]">TOD</div>
+                                    <div class="text-[10px] font-bold text-sky-400 flex flex-col items-center"><span class="text-[8px] text-gray-400">by Vezeeta</span><span>Shamel</span></div>
                                 </div>
                             </div>
-                            <div class="text-center mt-3"><button class="toggle-details-btn p-1.5 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-solid fa-chevron-down text-xs"></i></button></div>
+                            <div class="text-center mt-3">
+                                <button class="toggle-details-btn py-1 px-4 rounded-full border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition text-xs flex items-center justify-center gap-1.5 mx-auto">
+                                    <span>تفاصيل إضافية</span>
+                                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </main>`;
@@ -667,13 +719,11 @@
                 }
             }
 
-            // ANTI-TAMPER / DEVTOOLS BYPASS GUARD:
-            // MutationObserver checks if user attempts to force display #appContent or delete #loginOverlay without auth
+            // ANTI-TAMPER / DEVTOOLS BYPASS GUARD
             const securityObserver = new MutationObserver(function() {
                 const isAuthenticated = sessionStorage.getItem('vip_gold_authenticated') === 'true';
                 if (!isAuthenticated) {
                     if ($('#loginOverlay').length === 0 || $('#loginOverlay').hasClass('hidden')) {
-                        // Tamper detected! Force refresh page to restore security
                         sessionStorage.removeItem('vip_gold_authenticated');
                         location.reload();
                     }
@@ -685,7 +735,6 @@
 
             securityObserver.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
 
-            // Run check on initial load
             checkAuth();
 
             // Login Form Submit Event
@@ -698,7 +747,6 @@
                     sessionStorage.setItem('vip_gold_authenticated', 'true');
                     $('#loginError').addClass('hidden');
                     
-                    // Inject HTML securely only now
                     $('#appContent').html(renderAppHTML());
                     bindAppEvents();
 
@@ -713,25 +761,28 @@
                 }
             });
 
-            // Bind app interactive events after dynamic render
+            // Bind app interactive events
             function bindAppEvents() {
-                // Logout Button Event
+                // Logout Button
                 $('#logoutBtn').off('click').on('click', function () {
                     sessionStorage.removeItem('vip_gold_authenticated');
                     $('#appContent').empty().addClass('hidden').removeClass('flex');
                     $('#loginOverlay').fadeIn();
                 });
 
-                // Toggle Expand/Collapse Card Details
+                // Toggle Card Details
                 $('.toggle-details-btn').off('click').on('click', function () {
                     const card = $(this).closest('.card-glass');
                     const extraDetails = card.find('.extra-details');
+                    const textSpan = $(this).find('span');
                     const icon = $(this).find('i');
 
-                    extraDetails.slideToggle(300, function () {
+                    extraDetails.slideToggle(250, function () {
                         if (extraDetails.is(':visible')) {
+                            textSpan.text('إخفاء التفاصيل');
                             icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
                         } else {
+                            textSpan.text('تفاصيل إضافية');
                             icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
                         }
                     });
@@ -798,73 +849,78 @@
 
             const plansData = {
                 "600": {
+                    title: "VIP Gold 600",
                     price: "300 ج.م/شهر",
                     taxPrice: "452.41 ج.م/شهر شامل الضريبة",
                     familyMins: "10,000 دقيقة مجاناً 🔥",
                     mobileData: "20 جيجا موبايل إنترنت",
                     mins: "3,700 دقيقة أو رسالة",
                     familyLines: "2 خطوط عيلة",
-                    homeInternet: "150 جيجا إنترنت أرضى أو WE Air 150",
+                    homeInternet: "150 جيجا أرضى / Air 150",
                     intlMins: "25 دقيقة دولية",
                     roaming: "1.5 جيجا (مرتين بالسنة)",
-                    voucher: "1000 جنيه قسيمة شراء سنوية",
-                    installment: "تقسيط موبايل يصل إلى 10,000 ج.م",
+                    voucher: "1000 جنيه سنوية",
+                    installment: "تقسيط يصل إلى 10,000 ج.م",
                     entertainment: "TOD Mobile + Vezeeta Shamel"
                 },
                 "890": {
+                    title: "VIP Gold 890",
                     price: "445 ج.م/شهر",
                     taxPrice: "664.72 ج.م/شهر شامل الضريبة",
                     familyMins: "10,000 دقيقة مجاناً 🔥",
                     mobileData: "30 جيجا موبايل إنترنت",
                     mins: "6,000 دقيقة أو رسالة",
                     familyLines: "3 خطوط عيلة",
-                    homeInternet: "250 جيجا إنترنت أرضى أو WE Air 150",
+                    homeInternet: "250 جيجا أرضى / Air 150",
                     intlMins: "35 دقيقة دولية",
                     roaming: "1.5 جيجا (مرتين بالسنة)",
-                    voucher: "1500 جنيه قسيمة شراء سنوية",
-                    installment: "iPhone 17 حتى 30,000 / آخر 15,000",
+                    voucher: "1500 جنيه سنوية",
+                    installment: "iPhone 17 حتى 30k / آخر 15k",
                     entertainment: "TOD Mobile + Vezeeta Shamel"
                 },
                 "1200": {
+                    title: "VIP Gold 1200",
                     price: "600 ج.م/شهر",
                     taxPrice: "891.67 ج.م/شهر شامل الضريبة",
                     familyMins: "10,000 دقيقة مجاناً 🔥",
                     mobileData: "65 جيجا موبايل إنترنت",
                     mins: "8,000 دقيقة أو رسالة",
                     familyLines: "4 خطوط عيلة",
-                    homeInternet: "250 جيجا إنترنت أرضى أو WE Air 250",
+                    homeInternet: "250 جيجا أرضى / Air 250",
                     intlMins: "45 دقيقة دولية",
                     roaming: "2 جيجا (مرتين بالسنة)",
-                    voucher: "2000 جنيه قسيمة شراء سنوية",
-                    installment: "iPhone 17 حتى 40,000 / آخر 25,000",
+                    voucher: "2000 جنيه سنوية",
+                    installment: "iPhone 17 حتى 40k / آخر 25k",
                     entertainment: "TOD HD + Vezeeta Shamel"
                 },
                 "1500": {
+                    title: "VIP Gold 1500",
                     price: "750 ج.م/شهر",
                     taxPrice: "1,111.30 ج.م/شهر شامل الضريبة",
                     familyMins: "10,000 دقيقة مجاناً 🔥",
                     mobileData: "70 جيجا موبايل إنترنت",
                     mins: "9,000 دقيقة أو رسالة",
                     familyLines: "5 خطوط عيلة",
-                    homeInternet: "400 جيجا إنترنت أرضى أو WE Air 250",
+                    homeInternet: "400 جيجا أرضى / Air 250",
                     intlMins: "60 دقيقة دولية",
                     roaming: "4 جيجا (مرتين بالسنة)",
-                    voucher: "3000 جنيه قسيمة شراء سنوية",
-                    installment: "iPhone 17 حتى 60,000 / آخر 25,000",
+                    voucher: "3000 جنيه سنوية",
+                    installment: "iPhone 17 حتى 60k / آخر 25k",
                     entertainment: "TOD HD + Vezeeta Shamel"
                 },
                 "2300": {
+                    title: "VIP Gold 2300",
                     price: "1150 ج.م/شهر",
                     taxPrice: "1,696.98 ج.م/شهر شامل الضريبة",
                     familyMins: "10,000 دقيقة مجاناً 🔥",
                     mobileData: "130 جيجا موبايل إنترنت",
                     mins: "10,000 دقيقة أو رسالة",
                     familyLines: "6 خطوط عيلة",
-                    homeInternet: "750 جيجا إنترنت أرضى أو WE Air 650",
+                    homeInternet: "750 جيجا أرضى / Air 650",
                     intlMins: "75 دقيقة دولية",
                     roaming: "6 جيجا (مرتين بالسنة)",
-                    voucher: "5000 جنيه قسيمة شراء سنوية",
-                    installment: "iPhone 17 حتى 80,000 / آخر 25,000",
+                    voucher: "5000 جنيه سنوية",
+                    installment: "iPhone 17 حتى 80k / آخر 25k",
                     entertainment: "TOD HD + Vezeeta Shamel"
                 }
             };
@@ -886,10 +942,11 @@
                 updateCompareBar();
             });
 
-            // Open Compare Modal
+            // Open Compare Modal with Mobile & Desktop responsiveness
             $('#openCompareModalBtn').click(function () {
                 if (selectedComparePlans.length === 0) return;
 
+                // 1. Desktop Table Build
                 let tableHeader = `<th class="p-3 text-amber-400 font-extrabold text-right">الميزة / الباقة</th>`;
                 selectedComparePlans.forEach(planId => {
                     tableHeader += `<th class="p-3 text-center text-amber-300 font-extrabold border-r border-gray-800">VIP Gold ${planId}</th>`;
@@ -897,7 +954,7 @@
 
                 const featuresList = [
                     { key: "price", label: "السعر الأساسي (بعد الخصم)" },
-                    { key: "taxPrice", label: "الإجمالي النهائي شامل الضريبة" },
+                    { key: "taxPrice", label: "الإجمالي شامل الضريبة" },
                     { key: "familyMins", label: "دقائق العائلة المجانية" },
                     { key: "mobileData", label: "إنترنت الموبايل" },
                     { key: "mins", label: "الدقائق / الرسائل" },
@@ -915,13 +972,36 @@
                     tableBody += `<tr class="hover:bg-slate-800/40">`;
                     tableBody += `<td class="p-3 font-bold text-gray-200 border-b border-gray-800">${feat.label}</td>`;
                     selectedComparePlans.forEach(planId => {
-                        tableBody += `<td class="p-3 text-center border-r border-b border-gray-800 textamber-400 font-bold">${plansData[planId][feat.key]}</td>`;
+                        tableBody += `<td class="p-3 text-center border-r border-b border-gray-800 text-amber-400 font-bold">${plansData[planId][feat.key]}</td>`;
                     });
                     tableBody += `</tr>`;
                 });
 
                 $('#compareTable thead tr').html(tableHeader);
                 $('#compareTable tbody').html(tableBody);
+
+                // 2. Mobile Responsive Card Build
+                let mobileCardsHtml = "";
+                selectedComparePlans.forEach(planId => {
+                    const data = plansData[planId];
+                    mobileCardsHtml += `
+                    <div class="bg-slate-800/80 border border-amber-500/40 rounded-2xl p-4 space-y-2.5 text-xs">
+                        <div class="flex justify-between items-center border-b border-amber-500/20 pb-2">
+                            <span class="font-black text-amber-400 text-base">${data.title}</span>
+                            <span class="text-emerald-400 font-extrabold">${data.taxPrice}</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-[11px] pt-1">
+                            <div class="bg-slate-900/60 p-2 rounded-lg"><span class="text-gray-400 block">إنترنت الموبايل:</span><strong class="text-white">${data.mobileData}</strong></div>
+                            <div class="bg-slate-900/60 p-2 rounded-lg"><span class="text-gray-400 block">الدقائق:</span><strong class="text-white">${data.mins}</strong></div>
+                            <div class="bg-slate-900/60 p-2 rounded-lg"><span class="text-gray-400 block">خطوط العيلة:</span><strong class="text-white">${data.familyLines}</strong></div>
+                            <div class="bg-slate-900/60 p-2 rounded-lg"><span class="text-gray-400 block">الإنترنت الأرضي:</span><strong class="text-white">${data.homeInternet}</strong></div>
+                            <div class="bg-slate-900/60 p-2 rounded-lg"><span class="text-gray-400 block">قسيمة الشراء:</span><strong class="text-amber-300">${data.voucher}</strong></div>
+                            <div class="bg-slate-900/60 p-2 rounded-lg"><span class="text-gray-400 block">حد التقسيط:</span><strong class="text-amber-300">${data.installment}</strong></div>
+                        </div>
+                    </div>`;
+                });
+
+                $('#compareMobileCards').html(mobileCardsHtml);
                 $('#compareModal').removeClass('hidden').addClass('flex');
             });
 
