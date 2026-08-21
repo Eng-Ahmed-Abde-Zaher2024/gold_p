@@ -221,7 +221,10 @@
 
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">رقم الموبايل للتواصل</label>
-                    <input type="tel" id="buyerPhone" required placeholder="01x xxx xxxx" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none text-right min-h-[42px]">
+                    <input type="tel" id="buyerPhone" required placeholder="01xxxxxxxxx" maxlength="11" dir="ltr" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-gray-700 text-white focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-xs sm:text-sm outline-none text-right min-h-[42px]">
+                    <p id="buyerPhoneError" class="hidden text-red-400 text-[11px] font-bold mt-1 text-right">
+                        <i class="fa-solid fa-circle-exclamation ml-1"></i>يرجى إدخال رقم موبايل مصري صحيح مكون من 11 رقم (يبدأ بـ 010, 011, 012, 015)
+                    </p>
                 </div>
 
                 <div>
@@ -243,16 +246,8 @@
                 </div>
 
                 <!-- Price summary in modal -->
-                <div class="bg-amber-500/10 border border-amber-500/30 p-3 rounded-2xl space-y-2 text-xs font-bold">
-                    <div class="flex justify-between text-gray-300">
-                        <span>السعر الأساسي بعد الخصم:</span>
-                        <span id="modalPlanPrice" class="text-amber-400 font-extrabold">300 ج.م/شهر</span>
-                    </div>
-                    <div class="flex justify-between text-emerald-400 border-t border-amber-500/20 pt-1.5">
-                        <span>الإجمالي بـعـد الضريبة:</span>
-                        <span id="modalTaxPrice" class="font-extrabold text-xs sm:text-sm">452.41 ج.م/شهر</span>
-                    </div>
-                    <div class="flex justify-between text-amber-300 border-t border-amber-500/20 pt-1.5 text-[11px]">
+                <div class="bg-amber-500/10 border border-amber-500/30 p-3 rounded-2xl text-xs font-bold">
+                    <div class="flex justify-between text-amber-300 text-[11px]">
                         <span>رسوم تفعيل الخصم (مرة واحدة):</span>
                         <span class="font-black text-amber-400">2,500 ج.م</span>
                     </div>
@@ -1022,25 +1017,48 @@
                 $('#buyModal').addClass('hidden').removeClass('flex');
             });
 
+            // Prevent typing non-numeric characters in Egyptian phone field
+            $(document).on('input', '#buyerPhone', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+                if (this.value.length > 0) {
+                    $('#buyerPhone').removeClass('border-red-500 focus:ring-red-500');
+                    $('#buyerPhoneError').addClass('hidden');
+                }
+            });
+
             // Submit Form
             $('#purchaseForm').submit(function (e) {
                 e.preventDefault();
                 
                 const name = $('#buyerName').val().trim();
                 const phone = $('#buyerPhone').val().trim();
+
+                // Egyptian Mobile Validation Regex: starts with 010, 011, 012, or 015 and exactly 11 digits
+                const egPhoneRegex = /^01[0125]\d{8}$/;
+
+                if (!egPhoneRegex.test(phone)) {
+                    $('#buyerPhone').addClass('border-red-500 focus:ring-red-500').focus();
+                    $('#buyerPhoneError').removeClass('hidden');
+                    showToast("يرجى إدخال رقم موبايل مصري صحيح (11 رقم)");
+                    return;
+                } else {
+                    $('#buyerPhone').removeClass('border-red-500 focus:ring-red-500');
+                    $('#buyerPhoneError').addClass('hidden');
+                }
+
                 const orderType = $('#buyerOrderType').val();
                 const planTitle = $('#modalPlanTitle').text();
                 const planPrice = $('#modalPlanPrice').text();
                 const taxPrice = $('#modalTaxPrice').text();
 
-                const msgText = `مرحباً، أود تأكيد طلب الاشتراك في باقات VIP Gold:\n\n` +
+                let msgText = `مرحباً، أود تأكيد طلب الاشتراك في باقات VIP Gold:\n\n` +
                     `👤 الاسم: ${name}\n` +
                     `📱 رقم الموبايل: ${phone}\n` +
                     `📋 نوع الطلب: ${orderType}\n` +
-                    `⭐ الباقة المختارة: ${planTitle}\n` +
-                    `💰 السعر الأساسي: ${planPrice}\n` +
-                    `💳 الإجمالي مع الضريبة: ${taxPrice}\n\n` +
-                    `📌 ملاحظة: سوف أرسل لك سكرين شوت من عملية الدفع عبر إنستا باي (InstaPay).`;
+                    `⭐ الباقة المختارة: ${planTitle}\n`;
+                if (planPrice) msgText += `💰 السعر الأساسي: ${planPrice}\n`;
+                if (taxPrice) msgText += `💳 الإجمالي مع الضريبة: ${taxPrice}\n`;
+                msgText += `\n📌 ملاحظة: سوف أرسل لك سكرين شوت من عملية الدفع عبر إنستا باي (InstaPay).`;
 
                 const whatsappNumber = '201500023516';
                 const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(msgText)}`;
